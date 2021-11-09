@@ -18,20 +18,20 @@
   <meta name="description" content="">
   <meta name="author" content="shermer">
   <meta name="keywords" content="">
-  <meta name="description" content="对于多种选择器来说，如何使用连体符，例子如下： 1234567a &amp;#123;clolor: #ff3366; &amp;#125; a:hover &amp;#123;color: #cc0033; &amp;#125; .nav-menu a &amp;#123;color: #ff668c; &amp;#125; .nav-menu a:hover &amp;#123;color: #ff99b3; &amp;#125; .nav-menu a.">
+  <meta name="description" content="动态规划： 基本思想 动态规划算法的优缺点和问题分类 动态规划解决线性、前缀和、区间这三类问题  1.动态规划的简介：​    动态规划（英语：Dynamic programming，简称 DP），通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。&#x2F;&#x2F;定义base case,推导出状态转移方程 最优子结构：最优子结构规定的是子问题与原问题的关系 ​    动态规划要解决的都是一些问题的最">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sass中&amp;连体符的使用">
-<meta property="og:url" content="https://shermerl.github.io/2021/10/06/Sass%E4%B8%AD&%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="https://shermerl.github.io/2021/10/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="shermer">
-<meta property="og:description" content="对于多种选择器来说，如何使用连体符，例子如下： 1234567a &amp;#123;clolor: #ff3366; &amp;#125; a:hover &amp;#123;color: #cc0033; &amp;#125; .nav-menu a &amp;#123;color: #ff668c; &amp;#125; .nav-menu a:hover &amp;#123;color: #ff99b3; &amp;#125; .nav-menu a.">
+<meta property="og:description" content="动态规划： 基本思想 动态规划算法的优缺点和问题分类 动态规划解决线性、前缀和、区间这三类问题  1.动态规划的简介：​    动态规划（英语：Dynamic programming，简称 DP），通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。&#x2F;&#x2F;定义base case,推导出状态转移方程 最优子结构：最优子结构规定的是子问题与原问题的关系 ​    动态规划要解决的都是一些问题的最">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-06T10:16:29.000Z">
-<meta property="article:modified_time" content="2021-11-09T10:46:20.092Z">
+<meta property="article:published_time" content="2021-10-02T11:09:00.000Z">
+<meta property="article:modified_time" content="2021-11-09T11:09:57.510Z">
 <meta property="article:author" content="shermer">
-<meta property="article:tag" content="Sass">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>Sass中&amp;连体符的使用 - shermer</title>
+  <title>动态规划 - shermer</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -177,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Sass中&amp;连体符的使用">
+            <span class="h2" id="subtitle" title="动态规划">
               
             </span>
 
@@ -187,8 +187,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-10-06 18:16" pubdate>
-        2021年10月6日 晚上
+      <time datetime="2021-10-02 19:09" pubdate>
+        2021年10月2日 晚上
       </time>
     </span>
   
@@ -198,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      750 字
+      1k 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      3 分钟
     </span>
   
 
@@ -236,13 +236,42 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Sass中&amp;连体符的使用</h1>
+            <h1 style="display: none">动态规划</h1>
             
             <div class="markdown-body">
-              <p>对于多种选择器来说，如何使用连体符，例子如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span> &#123;clolor: <span class="hljs-number">#ff3366</span>; &#125; <br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#cc0033</span>; &#125; <br><span class="hljs-selector-class">.nav-menu</span> <span class="hljs-selector-tag">a</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff668c</span>; &#125; <br><span class="hljs-selector-class">.nav-menu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff99b3</span>; &#125; <br><span class="hljs-selector-class">.nav-menu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.active</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0040</span>; &#125; <br><span class="hljs-selector-class">.footer-menu</span> <span class="hljs-selector-tag">a</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff1a53</span>; &#125; <br><span class="hljs-selector-class">.footer-menu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#cc0033</span>; &#125;<br></code></pre></td></tr></table></figure>
-<p>使用连体符后：</p>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs mel">$color: #<span class="hljs-number">444</span>;<br>$bg-<span class="hljs-keyword">color</span>: #f5f5f5;<br>$link-<span class="hljs-keyword">color</span>: #f36;<br>a &#123;<br>    clolor: $link-<span class="hljs-keyword">color</span>;<br>    &amp;:hover &#123;<br>        <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">20</span>%);<br>    &#125;<br>    .nav-<span class="hljs-keyword">menu</span> &amp; &#123;<br>        <span class="hljs-keyword">color</span>: lighten($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">10</span>%);<br>        &amp;:hover &#123;<br>            <span class="hljs-keyword">color</span>: lighten($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">20</span>%);<br>        &#125;<br>        &amp;.active &#123;<br>            <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">10</span>%);<br>        &#125;<br>    &#125;<br>    .footer-<span class="hljs-keyword">menu</span> &amp; &#123;<br>        <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">5</span>%);<br>        &amp;:hover &#123;<br>            <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">20</span>%);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h3 id="动态规划："><a href="#动态规划：" class="headerlink" title="动态规划："></a><strong>动态规划：</strong></h3><blockquote>
+<p>基本思想</p>
+<p>动态规划算法的优缺点和问题分类</p>
+<p>动态规划解决线性、前缀和、区间这三类问题</p>
+</blockquote>
+<h2 id="1-动态规划的简介："><a href="#1-动态规划的简介：" class="headerlink" title="1.动态规划的简介："></a>1.动态规划的简介：</h2><p>​    动态规划（英语：Dynamic programming，简称 DP），通过把原问题分解为相对简单的<strong>子问题</strong>的方式求解<strong>复杂问题</strong>的方法。//定义base case,推导出<strong>状态转移方程</strong></p>
+<p><strong>最优子结构</strong>：最优子结构规定的是子问题与原问题的关系</p>
+<p>​    动态规划要解决的都是一些问题的最优解，即从很多解决问题的方案中找到最优的一个。当我们在求一个问题最优解的时候，如果可以把这个问题分解成多个子问题，然后递归地找到每个子问题的最优解，最后通过一定的数学方法对各个子问题的最优解进行组合得出最终的结果。总结来说就是一个问题的最优解是由它的各个子问题的最优解决定的</p>
+<p><strong>重复子问题</strong>：重复子问题规定的是子问题与子问题的关系。</p>
+<p>​    当我们在递归地寻找每个子问题的最优解的时候，有可能会重复地遇到一些更小的子问题，而且这些子问题会重叠地出现在子问题里，出现这样的情况，会有很多重复的计算，动态规划可以保证每个重叠的子问题只会被求解一次。当重复的问题很多的时候，动态规划可以减少很多重复的计算。重复子问题不是保证解的正确性必须的，但是如果递归求解子问题时，没有出现重复子问题，则没有必要用动态规划，直接普通的递归就可以了。</p>
+<ul>
+<li>动态规划本质是穷举法，可以保证结果是最佳的，复杂度高</li>
+</ul>
+<h2 id="2-利用动态规划解决问题："><a href="#2-利用动态规划解决问题：" class="headerlink" title="2.利用动态规划解决问题："></a>2.利用动态规划解决问题：</h2><ul>
+<li><strong>线性动态规划</strong></li>
+</ul>
+<p>​    状态定义，即dp[n],理解dp[n]是理解问题的关键</p>
+<p>​    状态转移，即dp[n]和dp[n-1]，例如定义好状态 <code>dp[n]</code>，此时子问题是 <code>dp[n-1]</code> 等，并且大规模的问题的解依赖小规模问题的解。</p>
+<ul>
+<li><strong>前缀和</strong></li>
+</ul>
+<p>有两类在数组 a 上的求和需求</p>
+<ol>
+<li>前缀和：求 a[0..i] 的和</li>
+<li>区间和：求区间 a[L, R] 的和</li>
+</ol>
+<p>关键的有两点：</p>
+<p>​    预处理前缀和的过程是最简单且最经典的单串动态规划问题。<br>先将所有位置的前缀和预处理出来，然后再处理区间和的查询，这是一种先缓存中间结果再处理查询的思路，因为这些中间结果在查询时需要反复用到，缓存之后就不用反复计算了，因此花时间预处理这些信息是有效的。</p>
+<ul>
+<li><strong>区间动态规划</strong></li>
+</ul>
+<p>​    区间动态规划，一般是定义 dp[i][j]，表示考虑 [i..j] 范围内的元素，原问题的解增加 i，减小 j 都可以得到更小规模的子问题。推导状态一般是按照区间长度从短到长推的。</p>
+<p>​    最常见的形式：推导 <code>dp[i][j]</code> 时，需要用到 <code>dp[i][j-1], dp[i+1][j], dp[i+1][j-1]</code> 三个子问题</p>
 
             </div>
             <hr>
@@ -252,7 +281,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -260,7 +289,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Sass/">Sass</a>
+                      <a class="hover-with-bg" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
                     
                   </div>
                 
@@ -277,12 +306,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/10/05/JS%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8API%E6%96%B9%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JS数组常用API方法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/10/05/JS%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8API%E6%96%B9%E6%B3%95/">
-                        <span class="hidden-mobile">JS数组常用API方法</span>
+                      <a href="/2021/09/25/Git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">Git常见错误解决方法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

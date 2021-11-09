@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2021/11/09/hello-world/"/>
-    <url>/2021/11/09/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Sass中&amp;连体符的使用</title>
     <link href="/2021/10/06/Sass%E4%B8%AD&amp;%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <url>/2021/10/06/Sass%E4%B8%AD&amp;%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
@@ -59,6 +46,31 @@
     <tags>
       
       <tag>Javascript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>动态规划</title>
+    <link href="/2021/10/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <url>/2021/10/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+    
+    <content type="html"><![CDATA[<h3 id="动态规划："><a href="#动态规划：" class="headerlink" title="动态规划："></a><strong>动态规划：</strong></h3><blockquote><p>基本思想</p><p>动态规划算法的优缺点和问题分类</p><p>动态规划解决线性、前缀和、区间这三类问题</p></blockquote><h2 id="1-动态规划的简介："><a href="#1-动态规划的简介：" class="headerlink" title="1.动态规划的简介："></a>1.动态规划的简介：</h2><p>​    动态规划（英语：Dynamic programming，简称 DP），通过把原问题分解为相对简单的<strong>子问题</strong>的方式求解<strong>复杂问题</strong>的方法。//定义base case,推导出<strong>状态转移方程</strong></p><p><strong>最优子结构</strong>：最优子结构规定的是子问题与原问题的关系</p><p>​    动态规划要解决的都是一些问题的最优解，即从很多解决问题的方案中找到最优的一个。当我们在求一个问题最优解的时候，如果可以把这个问题分解成多个子问题，然后递归地找到每个子问题的最优解，最后通过一定的数学方法对各个子问题的最优解进行组合得出最终的结果。总结来说就是一个问题的最优解是由它的各个子问题的最优解决定的</p><p><strong>重复子问题</strong>：重复子问题规定的是子问题与子问题的关系。</p><p>​    当我们在递归地寻找每个子问题的最优解的时候，有可能会重复地遇到一些更小的子问题，而且这些子问题会重叠地出现在子问题里，出现这样的情况，会有很多重复的计算，动态规划可以保证每个重叠的子问题只会被求解一次。当重复的问题很多的时候，动态规划可以减少很多重复的计算。重复子问题不是保证解的正确性必须的，但是如果递归求解子问题时，没有出现重复子问题，则没有必要用动态规划，直接普通的递归就可以了。</p><ul><li>动态规划本质是穷举法，可以保证结果是最佳的，复杂度高</li></ul><h2 id="2-利用动态规划解决问题："><a href="#2-利用动态规划解决问题：" class="headerlink" title="2.利用动态规划解决问题："></a>2.利用动态规划解决问题：</h2><ul><li><strong>线性动态规划</strong></li></ul><p>​    状态定义，即dp[n],理解dp[n]是理解问题的关键</p><p>​    状态转移，即dp[n]和dp[n-1]，例如定义好状态 <code>dp[n]</code>，此时子问题是 <code>dp[n-1]</code> 等，并且大规模的问题的解依赖小规模问题的解。</p><ul><li><strong>前缀和</strong></li></ul><p>有两类在数组 a 上的求和需求</p><ol><li>前缀和：求 a[0..i] 的和</li><li>区间和：求区间 a[L, R] 的和</li></ol><p>关键的有两点：</p><p>​    预处理前缀和的过程是最简单且最经典的单串动态规划问题。<br>先将所有位置的前缀和预处理出来，然后再处理区间和的查询，这是一种先缓存中间结果再处理查询的思路，因为这些中间结果在查询时需要反复用到，缓存之后就不用反复计算了，因此花时间预处理这些信息是有效的。</p><ul><li><strong>区间动态规划</strong></li></ul><p>​    区间动态规划，一般是定义 dp[i][j]，表示考虑 [i..j] 范围内的元素，原问题的解增加 i，减小 j 都可以得到更小规模的子问题。推导状态一般是按照区间长度从短到长推的。</p><p>​    最常见的形式：推导 <code>dp[i][j]</code> 时，需要用到 <code>dp[i][j-1], dp[i+1][j], dp[i+1][j-1]</code> 三个子问题</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>动态规划</tag>
       
     </tags>
     
