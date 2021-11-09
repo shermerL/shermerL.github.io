@@ -3,5 +3,43 @@
   
   
   
+  <entry>
+    <title>Hello World</title>
+    <link href="/2021/11/09/hello-world/"/>
+    <url>/2021/11/09/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Sass中&amp;连体符的使用</title>
+    <link href="/2021/10/06/Sass%E4%B8%AD&amp;%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <url>/2021/10/06/Sass%E4%B8%AD&amp;%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<p>对于多种选择器来说，如何使用连体符，例子如下：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span> &#123;clolor: <span class="hljs-number">#ff3366</span>; &#125; <br><span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#cc0033</span>; &#125; <br><span class="hljs-selector-class">.nav-menu</span> <span class="hljs-selector-tag">a</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff668c</span>; &#125; <br><span class="hljs-selector-class">.nav-menu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff99b3</span>; &#125; <br><span class="hljs-selector-class">.nav-menu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.active</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0040</span>; &#125; <br><span class="hljs-selector-class">.footer-menu</span> <span class="hljs-selector-tag">a</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff1a53</span>; &#125; <br><span class="hljs-selector-class">.footer-menu</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;<span class="hljs-attribute">color</span>: <span class="hljs-number">#cc0033</span>; &#125;<br></code></pre></td></tr></table></figure><p>使用连体符后：</p><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs mel">$color: #<span class="hljs-number">444</span>;<br>$bg-<span class="hljs-keyword">color</span>: #f5f5f5;<br>$link-<span class="hljs-keyword">color</span>: #f36;<br>a &#123;<br>    clolor: $link-<span class="hljs-keyword">color</span>;<br>    &amp;:hover &#123;<br>        <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">20</span>%);<br>    &#125;<br>    .nav-<span class="hljs-keyword">menu</span> &amp; &#123;<br>        <span class="hljs-keyword">color</span>: lighten($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">10</span>%);<br>        &amp;:hover &#123;<br>            <span class="hljs-keyword">color</span>: lighten($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">20</span>%);<br>        &#125;<br>        &amp;.active &#123;<br>            <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">10</span>%);<br>        &#125;<br>    &#125;<br>    .footer-<span class="hljs-keyword">menu</span> &amp; &#123;<br>        <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">5</span>%);<br>        &amp;:hover &#123;<br>            <span class="hljs-keyword">color</span>: darken($link-<span class="hljs-keyword">color</span>, <span class="hljs-number">20</span>%);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Sass</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
   
 </search>
