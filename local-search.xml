@@ -66,5 +66,30 @@
   
   
   
+  <entry>
+    <title>Git常见错误解决方法</title>
+    <link href="/2021/09/25/Git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <url>/2021/09/25/Git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-failed-to-receive-handshake-ssl-tls-connection-failed-github-【已解决】"><a href="#1-failed-to-receive-handshake-ssl-tls-connection-failed-github-【已解决】" class="headerlink" title="1.failed to receive handshake ssl/tls connection failed github    【已解决】"></a>1.failed to receive handshake ssl/tls connection failed github    【已解决】</h3><pre><code>在使用github客户端提交代码时，报错`failed to receive handshake ssl/tls connection failed`解决方法：$ git config --global http.sslBackend &quot;openssl&quot;</code></pre><h3 id="2-在第一次使用git传到远程仓库是报错error-failed-to-push-some-refs-to-‘github-com-xxx-git’-【已解决】"><a href="#2-在第一次使用git传到远程仓库是报错error-failed-to-push-some-refs-to-‘github-com-xxx-git’-【已解决】" class="headerlink" title="2.在第一次使用git传到远程仓库是报错error: failed to push some refs to ‘github.com/xxx.git’    【已解决】"></a>2.在第一次使用git传到远程仓库是报错error: failed to push some refs to ‘github.com/xxx.git’    【已解决】</h3><p>​    经过查资料发现是因为我们在本地新建库后，与远程仓库的内容不一致导致的。为此在我向远程库推送的时候，要先进行pull，让本地新建的库和远程库进行同步。</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">正确步骤：<br><span class="hljs-number">1</span>. git init <span class="hljs-regexp">//</span>初始化仓库<br><span class="hljs-number">2</span>. git add .(文件name) <span class="hljs-regexp">//</span>添加文件到本地仓库<br><span class="hljs-number">3</span>. git commit -m “first commit” <span class="hljs-regexp">//</span>添加文件描述信息<br><span class="hljs-number">4</span>. git remote add origin + 远程仓库地址 <span class="hljs-regexp">//</span>链接远程仓库，创建主分支<br><span class="hljs-number">5</span>. git pull origin master <span class="hljs-regexp">//</span> 把本地仓库的变化连接到远程仓库主分支<br><span class="hljs-number">6</span>. git push -u origin master <span class="hljs-regexp">//</span>把本地仓库的文件推送到远程仓库<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
   
 </search>
