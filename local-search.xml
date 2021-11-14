@@ -8,7 +8,7 @@
     <link href="/2021/11/14/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/"/>
     <url>/2021/11/14/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/</url>
     
-    <content type="html"><![CDATA[<h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><p>  偶然时间在力扣上看到一道</p><p>的题</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>​    偶然间在力扣上看到一排序的题，便点了进去。<a href="https://leetcode-cn.com/problems/sort-an-array/">912. 排序数组</a></p><p>题目意思很简单将数组升序排列，如果是为了快速解题的话，直接出结果，用sort()方法一步就行，但看了看难度，怎么是个中等题。于是在题库的归类里赫然看到“<strong>计数排序</strong>”这四个大字。那便来重新复习下计数排序的思路</p><p>​    计数排序英文名：Counting Sort，顾名思义。注意这里有个中文读音很像的<strong>“基数排序”</strong>，两者是有所不同的，基数排序英文是：Radix sort，radix英文中意思是基数，而基数在数学中是集合论的一个概念，两个能够建立元素间一一对应的集合称为互相对等集合，基数排序这里暂且不提。</p><p>​    首先计数排序从字面意思上就可以看出来，计算数字。这是一个稳定的非比较排序算法，根据小正整数的对象集合进行排序的算法，它只适合在键值的变化不明显大于项目数量的情况下直接使用</p><hr><p>​    In computer science, <strong>counting sort</strong> is an algorithm for sorting a collection of objects according to keys that are small positive integers; that is, it is an integer sorting algorithm. </p><hr><p>待更新</p><blockquote><p>参考资料：</p><p>[1]:<a href="https://en.wikipedia.org/wiki/Counting_sort">https://en.wikipedia.org/wiki/Counting_sort</a></p><p>[2]:<a href="https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/">https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/</a></p></blockquote>]]></content>
     
     
     <categories>
