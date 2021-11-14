@@ -215,9 +215,11 @@
           
             
           
-          计数排序​    偶然间在力扣上看到一排序的题，便点了进去。912. 排序数组
-题目意思很简单将数组升序排列，如果是为了快速解题的话，直接出结果，用sort()方法一步就行，但看了看难度，怎么是个中等题。于是在题库的归类里赫然看到“计数排序”这四个大字。那便来重新复习下计数排序的思路
-​    计数排序英文名：Counting Sort，顾名思义。注意这里有个中文读音很像的“基数排序”，两者是有所
+          计数排序复杂度分析：​        时间复杂度：O(n+k)，即线性时间，k为给定数据中的最大值（k为整数范围），而其他的排序方法则最好的情况才是O(nlgn)。这是计数排序用空间换取时间的便利，也是计数排序只在特定情况才能使用的缺陷。
+​        空间复杂度：总的空间复杂度为O(n+k)，因为用到了另一个数组O(k)用于存储。
+
+看完此文可以在力扣上轻松解决以下问题：
+274. H 指数
         </a>
       </p>
 
@@ -245,6 +247,8 @@
               <a href="/tags/LeetCode/">LeetCode</a>
             
               <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
+            
+              <a href="/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a>
             
           </div>
         
@@ -296,165 +300,6 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E5%9F%9F%E5%90%8D/">域名</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/10/06/Sass%E4%B8%AD&amp;%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank">
-          Sass中&amp;连体符的使用
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/10/06/Sass%E4%B8%AD&amp;%E8%BF%9E%E4%BD%93%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank">
-          
-          
-            
-          
-          对于多种选择器来说，如何使用连体符，例子如下：
-1234567a &#123;clolor: #ff3366; &#125; a:hover &#123;color: #cc0033; &#125; .nav-menu a &#123;color: #ff668c; &#125; .nav-menu a:hover &#123;color: #ff99b3; &#125; .nav-menu a.
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-10-06 18:16" pubdate>
-              2021-10-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Sass/">Sass</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/10/05/JS%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8API%E6%96%B9%E6%B3%95/" target="_blank">
-          JS数组常用API方法
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/10/05/JS%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8API%E6%96%B9%E6%B3%95/" target="_blank">
-          
-          
-            
-          
-          数组.concat()：合并数组1234let arr1 = [1, 2, 3]let arr2 = [4, 5, 6]let arr = arr1.concat(arr2) console.log(arr) // [1, 2, 3, 4, 5, 6]
-数组.indexOf()：查找数组中的元素找到返回索引值，找不到返回 -1123let arr1 = [1, 2, 3]let arr = arr
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-10-05 18:31" pubdate>
-              2021-10-05
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Javascript/">Javascript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/10/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" target="_blank">
-          动态规划
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/10/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" target="_blank">
-          
-          
-            
-          
-          动态规划：
-基本思想
-动态规划算法的优缺点和问题分类
-动态规划解决线性、前缀和、区间这三类问题
-
-1.动态规划的简介：​    动态规划（英语：Dynamic programming，简称 DP），通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。//定义base case,推导出状态转移方程
-最优子结构：最优子结构规定的是子问题与原问题的关系
-​    动态规划要解决的都是一些问题的最
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-10-02 19:09" pubdate>
-              2021-10-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
             
           </div>
         
