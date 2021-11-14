@@ -26,7 +26,7 @@
 <meta property="og:description" content="1.failed to receive handshake ssl&#x2F;tls connection failed github    【已解决】在使用github客户端提交代码时，报错&#96;failed to receive handshake ssl&#x2F;tls connection failed&#96; 解决方法：$ git config --global http.sslBackend &quot;open">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-25T10:58:04.000Z">
-<meta property="article:modified_time" content="2021-11-10T02:24:35.463Z">
+<meta property="article:modified_time" content="2021-11-14T02:01:16.150Z">
 <meta property="article:author" content="shermer">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      548 字
+      571 字
     </span>
   
 
@@ -261,6 +261,7 @@
             <div class="markdown-body">
               <h3 id="1-failed-to-receive-handshake-ssl-tls-connection-failed-github-【已解决】"><a href="#1-failed-to-receive-handshake-ssl-tls-connection-failed-github-【已解决】" class="headerlink" title="1.failed to receive handshake ssl/tls connection failed github    【已解决】"></a>1.failed to receive handshake ssl/tls connection failed github    【已解决】</h3><pre><code>在使用github客户端提交代码时，报错`failed to receive handshake ssl/tls connection failed`
 解决方法：$ git config --global http.sslBackend &quot;openssl&quot;
+ps:也有可能是网络问题，大概率挂个梯子就好了
 </code></pre><h3 id="2-在第一次使用git传到远程仓库是报错error-failed-to-push-some-refs-to-‘github-com-xxx-git’-【已解决】"><a href="#2-在第一次使用git传到远程仓库是报错error-failed-to-push-some-refs-to-‘github-com-xxx-git’-【已解决】" class="headerlink" title="2.在第一次使用git传到远程仓库是报错error: failed to push some refs to ‘github.com/xxx.git’    【已解决】"></a>2.在第一次使用git传到远程仓库是报错error: failed to push some refs to ‘github.com/xxx.git’    【已解决】</h3><p>​    经过查资料发现是因为我们在本地新建库后，与远程仓库的内容不一致导致的。为此在我向远程库推送的时候，要先进行pull，让本地新建的库和远程库进行同步。</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">正确步骤：<br><span class="hljs-number">1</span>. git init <span class="hljs-regexp">//</span>初始化仓库<br><span class="hljs-number">2</span>. git add .(文件name) <span class="hljs-regexp">//</span>添加文件到本地仓库<br><span class="hljs-number">3</span>. git commit -m “first commit” <span class="hljs-regexp">//</span>添加文件描述信息<br><span class="hljs-number">4</span>. git remote add origin + 远程仓库地址 <span class="hljs-regexp">//</span>链接远程仓库，创建主分支<br><span class="hljs-number">5</span>. git pull origin master <span class="hljs-regexp">//</span> 把本地仓库的变化连接到远程仓库主分支<br><span class="hljs-number">6</span>. git push -u origin master <span class="hljs-regexp">//</span>把本地仓库的文件推送到远程仓库<br></code></pre></td></tr></table></figure>
 
