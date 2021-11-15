@@ -8,7 +8,7 @@
     <link href="/2021/11/15/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E6%A1%B6%E6%8E%92%E5%BA%8F/"/>
     <url>/2021/11/15/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E6%A1%B6%E6%8E%92%E5%BA%8F/</url>
     
-    <content type="html"><![CDATA[<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><h3 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h3><p>​        时间复杂度：</p><p>​        空间复杂度：</p><blockquote><p>看完此文可以在力扣上轻松解决以下问题：</p></blockquote><p>​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在原理中讲到，只适用于较小的正整数，虽然可以通过取正来实现对负数的排序。但是如果是小数呢，数组的index可不能是小数。</p><h3 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1.算法思想"></a>1.算法思想</h3><blockquote><p>全文代码通过JavaScript实现</p><p>参考资料：</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h1><h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><h3 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h3><p>​        时间复杂度：平均时间复杂度为O(n + k)，最好的情况为线性时间，最坏的则为O(n ^ 2)。根据桶的划分大小，桶越小，排序的时间自然开销少，但是对应的需求的空间会增大。</p><p>​        空间复杂度：O(n * k)</p><blockquote><p>看完此文可以在力扣上轻松解决以下问题：</p></blockquote><p>​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在原理中讲到，只适用于较小的正整数，虽然可以通过取正来实现对负数的排序。但是如果是小数呢，数组的index可不能是小数。</p><h3 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1.算法思想"></a>1.算法思想</h3><blockquote><p>全文代码通过JavaScript实现</p><p>参考资料：</p><p>[1]:<a href="https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/">https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/</a></p></blockquote>]]></content>
     
     
     <categories>
