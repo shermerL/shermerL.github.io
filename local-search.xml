@@ -4,27 +4,23 @@
   
   
   <entry>
-    <title>LeetCode上的那些桶排序</title>
-    <link href="/2021/11/15/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E6%A1%B6%E6%8E%92%E5%BA%8F/"/>
-    <url>/2021/11/15/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E6%A1%B6%E6%8E%92%E5%BA%8F/</url>
+    <title>浅谈计算机存储单位</title>
+    <link href="/2021/11/15/%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D/"/>
+    <url>/2021/11/15/%E6%B5%85%E8%B0%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D/</url>
     
-    <content type="html"><![CDATA[<h1 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h1><h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><h3 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h3><p>​        时间复杂度：平均时间复杂度为O(n + k)，最好的情况为线性时间，最坏的则为O(n ^ 2)。根据桶的划分大小，桶越小，排序的时间自然开销少，但是对应的需求的空间会增大。</p><p>​        空间复杂度：O(n * k)</p><blockquote><p>看完此文可以在力扣上轻松解决以下问题：</p></blockquote><p>​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在原理中讲到，只适用于较小的正整数，虽然可以通过取正来实现对负数的排序。但是如果是小数呢，数组的index可不能是小数。</p><h3 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1.算法思想"></a>1.算法思想</h3><blockquote><p>全文代码通过JavaScript实现</p><p>参考资料：</p><p>[1]:<a href="https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/">https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="计算机存储单位"><a href="#计算机存储单位" class="headerlink" title="计算机存储单位"></a>计算机存储单位</h2><p>​        在计算机的内部，任何信息都被表示成二进制编码，二进制数据的每一位0或1是组成二进制信息的最小单位，称为一个“<strong>比特</strong>”(bit，或称作位元)，简称“位”，bit来源于binary digit，意思就是一个“二进制数字”，所以bit也是是计算机存储、运算、传输信息的最小单位。二进制信息的计量单位称为“<strong>字节</strong>”(Byte,或称作位组)，一个字节等于8个比特，通常b表示比特，B表示字节。</p><p>​        还有另外两个容易混淆的是“字”（word）和“字长”，<strong>字长</strong>等于CPU内部用于整数运算的运算器位数和通用寄存器宽度，我们常说的电脑是64位或32位，就是指字长。而<strong>字</strong>则是用于度量各种数据类型的宽度，不同的计算机字的长度和组成不完全相同，一台机器在提供数据类型的时候，就需要给出一个基本的字的宽度。</p><h3 id="1-单位定义"><a href="#1-单位定义" class="headerlink" title="1.单位定义"></a>1.单位定义</h3><p>​        存储单位：存储在计算机硬盘或内存中的信息容量标准，最小计量单位是“位”（bit， 比特），一个比特位表示一个二进制的 0 或 1 在计算机中所占用的存储空间</p><p>​        传输单位：在计算机网络中称为带宽，宽带传输速率的单位为bit/s,也可以写为bps，bps 是 bit per second 的缩写，表示每秒钟传输多少比特位信息，这里的b不是指Byte字节，而是bit位。例如：带宽的单位是 100MB/S，这里其实指的是每秒传输 100 兆 位，而不是 100 兆字节数据，因此将位数需要除以 8 换算成字节数，也就是每秒传输 12.5 兆字节，即 100MBit/S = 12.5MByte/</p><h3 id="2-单位换算"><a href="#2-单位换算" class="headerlink" title="2.单位换算"></a>2.单位换算</h3><p>​        1 字节（Byte）= 8 位（bit） </p><p>​        1KB（Kilo Byte）= 1024B（Byte字节）</p><p>​        1MB（Mega Byte）= 1024KB </p><p>​        1GB（Giga Byte）= 1024MB </p><p>​        1TB（Tera Byte）= 1024G</p><blockquote><p>参考资料：</p><p>[1]:袁春风. 计算机系统基础[M]. 机械工业出版社, 2014.</p><p>[2]:谢希仁. 第7版. 计算机网络. 电子工业出版社.</p></blockquote>]]></content>
     
     
     <categories>
       
-      <category>算法</category>
+      <category>计算机基础</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>LeetCode</tag>
-      
-      <tag>排序</tag>
-      
-      <tag>桶排序</tag>
+      <tag>信息处理</tag>
       
     </tags>
     
