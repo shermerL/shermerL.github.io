@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>LeetCode上的那些桶排序</title>
+    <link href="/2021/11/15/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E6%A1%B6%E6%8E%92%E5%BA%8F/"/>
+    <url>/2021/11/15/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E6%A1%B6%E6%8E%92%E5%BA%8F/</url>
+    
+    <content type="html"><![CDATA[<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><h3 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h3><p>​        时间复杂度：</p><p>​        空间复杂度：</p><blockquote><p>看完此文可以在力扣上轻松解决以下问题：</p></blockquote><p>​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在原理中讲到，只适用于较小的正整数，虽然可以通过取正来实现对负数的排序。但是如果是小数呢，数组的index可不能是小数。</p><h3 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1.算法思想"></a>1.算法思想</h3><blockquote><p>全文代码通过JavaScript实现</p><p>参考资料：</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+      <tag>排序</tag>
+      
+      <tag>桶排序</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LeetCode上的那些计数排序</title>
     <link href="/2021/11/14/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/"/>
     <url>/2021/11/14/LeetCode%E4%B8%8A%E7%9A%84%E9%82%A3%E4%BA%9B%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/</url>
