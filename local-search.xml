@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>浅谈语义化标签</title>
+    <link href="/2021/11/17/%E6%B5%85%E8%B0%88%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE/"/>
+    <url>/2021/11/17/%E6%B5%85%E8%B0%88%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h2><p>​        语义化标签是HTML5的新特性，赋予标签含义。给某块内容用上一个最恰当最合适的标签，使页面有良好的结构，页面元素有含义，更利于开发者、程序和其他设备对于标签的理解。</p><p>​        语义化标签是应用于无障碍的一个重要的实践，在网页开发中，可访问性是指网页内容和用户界面可以被用户理解、浏览并与之交互。这里的用户包括有视觉障碍、听觉障碍或认知障碍的用户。所以语义化在软件、机器翻译等方面发挥着重要作用，同时搜索引擎也会通过语义化标签增强文章的SEO。</p><h3 id="1-常用的语义化标签"><a href="#1-常用的语义化标签" class="headerlink" title="1.常用的语义化标签"></a>1.常用的语义化标签</h3><p>​    </p><div class="table-container"><table><thead><tr><th>article</th><th>文章</th></tr></thead><tbody><tr><td>aside</td><td>侧边栏</td></tr><tr><td>main</td><td>主要内容</td></tr><tr><td>nav</td><td>导航栏</td></tr><tr><td>section</td><td>区域</td></tr><tr><td>header</td><td>页面的头部区域</td></tr><tr><td>footer</td><td>页面的尾部区域</td></tr><tr><td>mark</td><td>标记</td></tr><tr><td>ul</td><td>无序列表</td></tr><tr><td>form</td><td>表单</td></tr><tr><td>button</td><td>按钮</td></tr><tr><td>i</td><td>斜体</td></tr></tbody></table></div><h3 id="2-语义化标签的优点"><a href="#2-语义化标签的优点" class="headerlink" title="2.语义化标签的优点"></a>2.语义化标签的优点</h3><ul><li>语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析</li><li>即使在没有样式 CSS 情况下也以一种文档格式显示，并且是便于阅读、维护和理解</li><li>搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO</li><li>用正确的标签做正确的事情</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML5</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>标签</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>浅谈域名解析</title>
     <link href="/2021/11/17/%E6%B5%85%E8%B0%88%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/"/>
     <url>/2021/11/17/%E6%B5%85%E8%B0%88%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</url>
