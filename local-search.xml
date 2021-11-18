@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>常见数据结构</title>
+    <link href="/2021/11/18/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <url>/2021/11/18/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    
+    <content type="html"><![CDATA[<h2 id="常见数据结构："><a href="#常见数据结构：" class="headerlink" title="常见数据结构："></a>常见数据结构：</h2><p>​    数据结构是相互之间存在一种或多种特定关系的数据元素的集合。它的核心内涵是分解与抽象，并得到软件开发过程中需要用到的逻辑结构。</p><h4 id="数组（Array）："><a href="#数组（Array）：" class="headerlink" title="数组（Array）："></a>数组（Array）：</h4><p>​    将具有相同类型的若干数据组织在一起的集合，这是一种最基本而且也是一种最经常使用的数据结构</p><h4 id="栈（Stack）："><a href="#栈（Stack）：" class="headerlink" title="栈（Stack）："></a>栈（Stack）：</h4><p>​    一种特殊的线性表，只能在一个表的固定端进行数据节点的插入和删除操作，栈正是一种按照后进先出（LIFO）的原则来存储数据的数据结构</p><h4 id="队列（Queue）："><a href="#队列（Queue）：" class="headerlink" title="队列（Queue）："></a>队列（Queue）：</h4><p>​    和栈类似，但不同的是，它是在一端执行入队操作，而在另一端进行出队操作</p><h4 id="链表（Linked-List）："><a href="#链表（Linked-List）：" class="headerlink" title="链表（Linked List）："></a>链表（Linked List）：</h4><p>​    它和数组一样，也是一组数据的集合，但和数组不一样的是， 它并不是一组连续的数据集合，而是通过指针连接在一起的。</p><h4 id="树（Tree）："><a href="#树（Tree）：" class="headerlink" title="树（Tree）："></a>树（Tree）：</h4><p>​    这是一种典型的非线性结构，之所以叫做“树”，是因为它的结构看起来就像一颗倒过来的树，它只有一个根结点，但可以有多个后继节点。</p><h4 id="堆（Heap）："><a href="#堆（Heap）：" class="headerlink" title="堆（Heap）："></a>堆（Heap）：</h4><p>​    它是一种特殊的树型结构，它的特点是根结点的值是所有节点中最大或者最小的，而且根结点的子节点也是一个堆结构。</p><h4 id="图（Graph）："><a href="#图（Graph）：" class="headerlink" title="图（Graph）："></a>图（Graph）：</h4><p>​    这也是一种非线性数据结构，在图结构中，数据节点称为顶点，顶点之间的连线称为边。</p><h4 id="散列表（Hash）："><a href="#散列表（Hash）：" class="headerlink" title="散列表（Hash）："></a>散列表（Hash）：</h4><p>​    其实就是哈希表，只不过一个是音译。这种数据结构来源于散列函数，它的思想是如果存在 x，那么就必然有一个唯一的存储位置 f(x)可以找到 x，这样通过数学函数就直接计算出 x 的存储位置而不用在进行比较、查找以后才知道。</p><p>ps:数据结构的内容远不是几句话能够说完的，尤其是树和图这一块，这里只是汇总常见的数据结构，做个梗概</p><blockquote><p>参考资料：</p><p>[1]严蔚敏. 数据结构(C语言版)[J]. 计算机教育.</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据结构</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>网络拓扑结构</title>
     <link href="/2021/11/18/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84/"/>
     <url>/2021/11/18/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84/</url>
