@@ -18,20 +18,20 @@
   <meta name="description" content="">
   <meta name="author" content="shermer">
   <meta name="keywords" content="">
-  <meta name="description" content="​    如果说对于一个语言，首先学习的是语法。那么对于js来说，大多数人都不是从学习”语法“开始的，而是直接使用js。在我一开始接触到这门语言，要如何理解js，就是一道迈不过去的坎、悬在头上的达摩克利斯之剑。 ​    当我在没有系统的学习js之前，处在仅且会用的阶段，对于var、let、const的使用也是不求甚解，用来定义变量或常量，但要问起来又什么差别？不好意思，不知道，不了解。但就是这样">
+  <meta name="description" content="很感谢若川大佬组织的源码阅读 以下为原文：https:&#x2F;&#x2F;juejin.cn&#x2F;post&#x2F;6994976281053888519  ​    源码阅读在我看来极具挑战，一方面是我没有系统的学过vue，甚至于官方文档也没有看过。所以在了解到这次的源码阅读活动跟框架关联不大的时候，对于框架源码阅读的压力也减轻了不少。而且跟着若川大佬的笔记入手，能够很有效的去分析问题。那么这里就开始第二期的源码阅读~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《You Don&#39;t Know JS》学习之小序">
-<meta property="og:url" content="https://shermerl.github.io/2021/11/21/%E3%80%8AYou%20Don%E2%80%99t%20Know%20JS%E3%80%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%B0%8F%E5%BA%8F/index.html">
+<meta property="og:title" content="【第二期】vue3 工具函数源码阅读">
+<meta property="og:url" content="https://shermerl.github.io/2021/11/22/%E3%80%90%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91vue3%20%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/index.html">
 <meta property="og:site_name" content="shermer">
-<meta property="og:description" content="​    如果说对于一个语言，首先学习的是语法。那么对于js来说，大多数人都不是从学习”语法“开始的，而是直接使用js。在我一开始接触到这门语言，要如何理解js，就是一道迈不过去的坎、悬在头上的达摩克利斯之剑。 ​    当我在没有系统的学习js之前，处在仅且会用的阶段，对于var、let、const的使用也是不求甚解，用来定义变量或常量，但要问起来又什么差别？不好意思，不知道，不了解。但就是这样">
+<meta property="og:description" content="很感谢若川大佬组织的源码阅读 以下为原文：https:&#x2F;&#x2F;juejin.cn&#x2F;post&#x2F;6994976281053888519  ​    源码阅读在我看来极具挑战，一方面是我没有系统的学过vue，甚至于官方文档也没有看过。所以在了解到这次的源码阅读活动跟框架关联不大的时候，对于框架源码阅读的压力也减轻了不少。而且跟着若川大佬的笔记入手，能够很有效的去分析问题。那么这里就开始第二期的源码阅读~">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-21T12:47:09.000Z">
-<meta property="article:modified_time" content="2021-11-21T12:56:55.119Z">
+<meta property="article:published_time" content="2021-11-22T04:56:20.000Z">
+<meta property="article:modified_time" content="2021-11-22T09:33:01.008Z">
 <meta property="article:author" content="shermer">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>《You Don&#39;t Know JS》学习之小序 - shermer</title>
+  <title>【第二期】vue3 工具函数源码阅读 - shermer</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="《You Don&#39;t Know JS》学习之小序">
+            <span class="h2" id="subtitle" title="【第二期】vue3 工具函数源码阅读">
               
             </span>
 
@@ -199,8 +199,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-21 20:47" pubdate>
-        2021年11月21日 晚上
+      <time datetime="2021-11-22 12:56" pubdate>
+        2021年11月22日 下午
       </time>
     </span>
   
@@ -210,7 +210,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      816 字
+      3.4k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      11 分钟
     </span>
   
 
@@ -256,14 +256,79 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">《You Don&#39;t Know JS》学习之小序</h1>
+            <h1 style="display: none">【第二期】vue3 工具函数源码阅读</h1>
             
             <div class="markdown-body">
-              <p>​    如果说对于一个语言，首先学习的是语法。那么对于js来说，大多数人都不是从学习”语法“开始的，而是直接使用js。在我一开始接触到这门语言，要如何理解js，就是一道迈不过去的坎、悬在头上的达摩克利斯之剑。</p>
-<p>​    当我在没有系统的学习js之前，处在仅且会用的阶段，对于var、let、const的使用也是不求甚解，用来定义变量或常量，但要问起来又什么差别？不好意思，不知道，不了解。但就是这样在短时间内速成的js语法，如果不要求第二天立马弄个项目出来，这点东西也足够应付很多场景了，比如说写算法题。js中很重要的的闭包、原型、promise….，这些东西在写算法中并不是必须的，也就是抱着这样的侥幸心理，靠着几天速成的js基础，开始了算法之路。</p>
-<p>​    不过几天的速成之路倒也不是什么都没学到，在fcc上靠着一道又一道的基础例题，边看MDN，边看一些技术文章。从只会var一个变量，靠着其他语言基础写点遍历的js小白，也算是略懂一些js的特性，容易弄混淆的this指向、闭包究竟是个什么东西？、手写一个promise、听起来极其高大上的函数柯里化。我就是在这样一边耳濡目染个个不知所以的名词，被前端学习群里的大佬发的面试题pua，一边穷尽“毕生所学”来刷算法，至终发觉，学海无涯，没有一个可靠的基础，所学就如大海之扁舟，无归无得。对我来说，扎实的前端基础学习迫在眉睫。</p>
-<p>​    有人认为前端简单，确实，相比于其他语言，弱化类型就已经极大降低了js的使用学习成本，但js上手容易并不代表学起来容易，也更不代表前端学起来容易。前端已经不复当日“吴下阿蒙”，遍观js的发展历程，标准化ECMAScrip赫然登场，前端工程化，js框架三足鼎立更有typtscript、rust、webAssembly等等引领潮流。怎么看，前端都不仅仅是只需要个切图写界面的码农就能胜任的。</p>
-<p>​    故而，学习的高度决定了能力的高度。今日以此为记，以学促成，以文促学，牢记始终，不忘学之本末。</p>
+              <blockquote>
+<p>很感谢若川大佬组织的源码阅读</p>
+<p>以下为原文：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6994976281053888519">https://juejin.cn/post/6994976281053888519</a></p>
+</blockquote>
+<p>​    源码阅读在我看来极具挑战，一方面是我没有系统的学过vue，甚至于官方文档也没有看过。所以在了解到这次的源码阅读活动跟框架关联不大的时候，对于框架源码阅读的压力也减轻了不少。而且跟着若川大佬的笔记入手，能够很有效的去分析问题。那么这里就开始第二期的源码阅读~</p>
+<h2 id="1-阅读开源项目"><a href="#1-阅读开源项目" class="headerlink" title="1.阅读开源项目"></a>1.阅读开源项目</h2><p>​    首先给到项目的地址：<a target="_blank" rel="noopener" href="https://github.com/vuejs/vue-next">https://github.com/vuejs/vue-next</a></p>
+<p>​    在github上找项目的时候，首先就是找到带.md后缀的文档，打开来看。github上在每次新建仓库的时候都会有个选项是否需要添加ReadMe.md这个文件，这个就是用来写一些项目配置相关的东西。首先阅读readme也是一个初步的对项目的了解。由于大部分的开源项目都是英文的，为了节约时间便于阅读，可以借助DeepL翻译器来配合阅读。</p>
+<blockquote>
+<p>DeepL翻译器:<a target="_blank" rel="noopener" href="https://www.deepl.com/translator">https://www.deepl.com/translator</a></p>
+</blockquote>
+<p>这里附上项目目录结构的部分内容：</p>
+<ul>
+<li>reactivity:reactivity系统。它可以作为一个与框架无关的包独立使用。</li>
+</ul>
+<ul>
+<li>runtime-core:与平台无关的运行时核心。包括虚拟Dom渲染器、组件实现和JavaScript APIs的代码。针对特定平台的高阶运行时（即自定义渲染器）可以用这个包来创建。</li>
+</ul>
+<ul>
+<li>runtime-dom: 以浏览器为目标的运行时。包括处理本地DOM API、属性、属性、事件处理程序等。</li>
+</ul>
+<ul>
+<li>runtime-test:用于测试的轻量级运行时。可以在任何JavaScript环境中使用，因为它 “渲染 “了一棵纯JavaScript对象的树。该树可以用来保证正确的渲染输出。还提供了用于序列化树、触发事件和记录更新过程中执行的实际节点操作的实用程序。</li>
+</ul>
+<ul>
+<li>server-renderer:用于服务器端渲染的包。</li>
+</ul>
+<ul>
+<li>compiler-core:平台无关的编译器核心。包括编译器的可扩展基础和所有平台无关的插件。</li>
+</ul>
+<ul>
+<li>compiler-dom:带有专门针对浏览器的附加插件的编译器。</li>
+</ul>
+<ul>
+<li>compiler-ssr:编译器，产生为服务器端渲染而优化的渲染函数。</li>
+</ul>
+<ul>
+<li><p>template-explorer:一个用于调试编译器输出的开发工具。你可以运行 nr dev template-explorer 并打开它的 index.html 来获得一个基于当前源代码的模板编译副本。</p>
+<p>​    模板探索器的live版本也是可用的，它可以用来为编译器的错误提供副本。你也可以从部署日志中挑选特定提交的部署。</p>
+</li>
+<li><p>shared:多个软件包之间共享的内部实用程序（尤其是运行时和编译器软件包使用的环境无关的实用程序）。</p>
+</li>
+</ul>
+<ul>
+<li>vue:面向公众的 “完整构建”，包括运行时和编译器。</li>
+</ul>
+<h3 id="1-2-打包构建代码"><a href="#1-2-打包构建代码" class="headerlink" title="1-2.打包构建代码"></a>1-2.打包构建代码</h3><p>​    先将项目clone到本地，由于项目中使用的是TS，但我没学过TS，所以参考若川大佬的文章，打包构建将TS转为JS。这里首先需要安装Node.js,由于我之前安过，这里就不再重复步骤，可以通过node -v 判断自己是否已经安装了。先全局安装yarn，直接cd到项目文件夹去添加依赖。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span><br><br>npm install --global yarn<br>yarn <br>yarn build<br></code></pre></td></tr></table></figure>
+<p>build完之后可以在vue-next\packages\shared\dist 这个文件夹里看到.js的文件</p>
+<h3 id="1-3-生成sourcemap调试源码"><a href="#1-3-生成sourcemap调试源码" class="headerlink" title="1-3.生成sourcemap调试源码"></a>1-3.生成sourcemap调试源码</h3><p>​    在package.json中添加上</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-string">&quot;scripts&quot;</span>: &#123;<br>        <span class="hljs-string">&quot;dev:sourcemap&quot;</span>: <span class="hljs-string">&quot;node scripts/dev.js --sourcemap&quot;</span><br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">yarn</span> dev:sourcemap<br></code></pre></td></tr></table></figure>
+<p>即可执行，生成sourcemap，控制台会给出生成的地址，这时候随便找个页面引入改文件，启动服务即可调试源码。</p>
+<h2 id="2-调试源码"><a href="#2-调试源码" class="headerlink" title="2.调试源码"></a>2.调试源码</h2><p>​    在打好断点开始调试。首先看到的是下面这些</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs vue">export const createApp = ((...args) =&gt; &#123;<br>  const app = ensureRenderer().createApp(...args)<br><br>  if (__DEV__) &#123;<br>    injectNativeTagCheck(app)<br>    injectCompilerOptionsCheck(app)<br>  &#125;<br>//省略<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>官方文档的解释是：每个 Vue 应用都是通过用 <code>createApp</code> 函数创建一个新的应用实例开始的</p>
+<p>这里就是创建新的应用实例的第一步，然后看到if语句中有个 DEV ,于是去查了下，初步看来 DEV 是个bool类型的，从字面上理解起来有点像，springboot配置开发环境时用到的:application-dev和application-prod类似，查阅相关资料，DEV也确实就是在vue构建开发资源时，用于判断开发环境的一个常量，当处于开发环境时，DEV值为true,处于生产环境时，DEV值为false。</p>
+<p>然后接下来会进入到ensureRenderer()函数的内部</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs vue">function ensureRenderer() &#123;<br>  return (<br>    renderer ||<br>    (renderer = createRenderer&lt;Node, Element | ShadowRoot&gt;(rendererOptions))<br>  )<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这个地方可能是把创建完的对象返回过去了，这里不太懂，然后逐步调试，后面的API也看不懂了，就先不看。进入这一期的正题。</p>
+<h2 id="3-工具函数"><a href="#3-工具函数" class="headerlink" title="3.工具函数"></a>3.工具函数</h2><p>​    这里的一些函数还是可以看懂的，我就挑几个我看的懂的记录下~</p>
+<h3 id="onRE："><a href="#onRE：" class="headerlink" title="onRE："></a>onRE：</h3><p>这个是用到了正则去进行筛选。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> onRE = <span class="hljs-regexp">/^on[^a-z]/</span>;<br><span class="hljs-keyword">const</span> isOn = <span class="hljs-function">(<span class="hljs-params">key</span>) =&gt;</span> onRE.test(key);<br></code></pre></td></tr></table></figure>
+<h3 id="remove"><a href="#remove" class="headerlink" title="remove:"></a>remove:</h3><p>这里很容易看出来是对数组进行的操作，splice（），在i位置删除1个元素，可以在sublime里把这个函数放进去自己写个输入输出测试下。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> remove = <span class="hljs-function">(<span class="hljs-params">arr, el</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> i = arr.indexOf(el);<br>    <span class="hljs-keyword">if</span> (i &gt; -<span class="hljs-number">1</span>) &#123;<br>        arr.splice(i, <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="hasOwnProperty："><a href="#hasOwnProperty：" class="headerlink" title="hasOwnProperty："></a>hasOwnProperty：</h3><p>这里在原型里常用到，用于判断是不是自己的</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dart"><span class="hljs-keyword">const</span> hasOwnProperty = <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty;<br></code></pre></td></tr></table></figure>
+<h3 id="is…"><a href="#is…" class="headerlink" title="is…:"></a>is…:</h3><p>这后面一大段代码就是用来判断类型的，不过不清楚为什么要加上$1,可能是为了防止重名？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs vue">const isArray$1 = Array.isArray;<br>const isMap$1 = (val) =&gt; toTypeString$1(val) === &#x27;[object Map]&#x27;;<br>const isSet$1 = (val) =&gt; toTypeString$1(val) === &#x27;[object Set]&#x27;;<br>const isDate$1 = (val) =&gt; val instanceof Date;<br>const isFunction$1 = (val) =&gt; typeof val === &#x27;function&#x27;;<br>const isString$1 = (val) =&gt; typeof val === &#x27;string&#x27;;<br>const isSymbol = (val) =&gt; typeof val === &#x27;symbol&#x27;;<br>const isObject$1 = (val) =&gt; val !== null &amp;&amp; typeof val === &#x27;object&#x27;;<br></code></pre></td></tr></table></figure>
+<h3 id="4-小结"><a href="#4-小结" class="headerlink" title="4.小结"></a>4.小结</h3><p>​    还有很多工具函数不能一一列举出来。看到现在，大部分的函数仔细分析还是能理解的，而且源码的命名在这里就能看出很规范，像动词+名词，在一定程度上能够理解这个函数是想要干什么。而且从开头clone项目到分析源码的这个过程，自己动手操作下来，阅读源码也不像是一件“高不可攀”的事情，可能刚开始有点吃力，但就算没有学过框架，只要能花些时间，也能够有很大的收获。</p>
 
             </div>
             <hr>
@@ -273,7 +338,9 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JS/">你不知道的JS</a>
+                      <a class="hover-with-bg" href="/categories/VUE/">VUE</a>
+                    
+                      <a class="hover-with-bg" href="/categories/VUE/%E6%BA%90%E7%A0%81/">源码</a>
                     
                   </div>
                 
@@ -281,7 +348,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                     
                   </div>
                 
@@ -298,18 +365,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/22/%E3%80%90%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91vue3%20%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【第二期】vue3 工具函数源码阅读</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/18/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9F%A5%E6%89%BE%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
-                        <span class="hidden-mobile">常见的查找排序算法</span>
+                      <a href="/2021/11/21/%E3%80%8AYou%20Don%E2%80%99t%20Know%20JS%E3%80%8B%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%B0%8F%E5%BA%8F/">
+                        <span class="hidden-mobile">《You Don't Know JS》学习之小序</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
