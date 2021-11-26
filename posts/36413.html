@@ -18,20 +18,22 @@
   <meta name="description" content="">
   <meta name="author" content="shermer">
   <meta name="keywords" content="">
-  <meta name="description" content="网络拓扑结构星型结构：​    是指各计算机以星型方式连接成网。网络有中央节点，其他结点（工作站、服务器）都与中央节点直接相连，这种结构以中央结点为中心，因此又称为集中式网络。具有结构简单、便于管理、控制简单、网络延迟时间小、传输误差低等特点。但缺点也是明显的：可靠性较低、资源共享能力较差、线路利用率低。  节点：指的是一个网络端口，如交换机、网关、路由器、防火墙等设备的端口  总线型结构：​">
+  <meta name="description" content="待更新桶排序复杂度分析：​        时间复杂度：平均时间复杂度为O(n + k)，最好的情况为线性时间，最坏的则为O(n ^ 2)。根据桶的划分大小，桶越小，排序的时间自然开销少，但是对应的需求的空间会增大。 ​        空间复杂度：O(n * k)  看完此文可以在力扣上轻松解决以下问题：  ​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络拓扑结构">
-<meta property="og:url" content="https://yykaoyanupup.xyz/2021/11/18/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:title" content="LeetCode上的那些桶排序">
+<meta property="og:url" content="https://yykaoyanupup.xyz/posts/36413.html">
 <meta property="og:site_name" content="shermer">
-<meta property="og:description" content="网络拓扑结构星型结构：​    是指各计算机以星型方式连接成网。网络有中央节点，其他结点（工作站、服务器）都与中央节点直接相连，这种结构以中央结点为中心，因此又称为集中式网络。具有结构简单、便于管理、控制简单、网络延迟时间小、传输误差低等特点。但缺点也是明显的：可靠性较低、资源共享能力较差、线路利用率低。  节点：指的是一个网络端口，如交换机、网关、路由器、防火墙等设备的端口  总线型结构：​">
+<meta property="og:description" content="待更新桶排序复杂度分析：​        时间复杂度：平均时间复杂度为O(n + k)，最好的情况为线性时间，最坏的则为O(n ^ 2)。根据桶的划分大小，桶越小，排序的时间自然开销少，但是对应的需求的空间会增大。 ​        空间复杂度：O(n * k)  看完此文可以在力扣上轻松解决以下问题：  ​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-18T08:29:24.000Z">
-<meta property="article:modified_time" content="2021-11-18T08:48:38.985Z">
+<meta property="article:published_time" content="2021-11-15T05:47:28.000Z">
+<meta property="article:modified_time" content="2021-11-26T03:44:38.867Z">
 <meta property="article:author" content="shermer">
-<meta property="article:tag" content="结构">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="排序">
+<meta property="article:tag" content="桶排序">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>网络拓扑结构 - shermer</title>
+  <title>LeetCode上的那些桶排序 - shermer</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -189,7 +191,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="网络拓扑结构">
+            <span class="h2" id="subtitle" title="LeetCode上的那些桶排序">
               
             </span>
 
@@ -199,8 +201,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-18 16:29" pubdate>
-        2021年11月18日 下午
+      <time datetime="2021-11-15 13:47" pubdate>
+        2021年11月15日 下午
       </time>
     </span>
   
@@ -210,7 +212,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      661 字
+      327 字
     </span>
   
 
@@ -219,7 +221,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      1 分钟
     </span>
   
 
@@ -256,27 +258,19 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">网络拓扑结构</h1>
+            <h1 style="display: none">LeetCode上的那些桶排序</h1>
             
             <div class="markdown-body">
-              <h2 id="网络拓扑结构"><a href="#网络拓扑结构" class="headerlink" title="网络拓扑结构"></a>网络拓扑结构</h2><h4 id="星型结构："><a href="#星型结构：" class="headerlink" title="星型结构："></a>星型结构：</h4><p>​    是指各计算机以星型方式连接成网。网络有中央节点，其他结点（工作站、服务器）都与中央节点直接相连，这种结构以中央结点为中心，因此又称为集中式网络。具有结构简单、便于管理、控制简单、网络延迟时间小、传输误差低等特点。但缺点也是明显的：可靠性较低、资源共享能力较差、线路利用率低。</p>
+              <h1 id="待更新"><a href="#待更新" class="headerlink" title="待更新"></a>待更新</h1><h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><h3 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h3><p>​        时间复杂度：平均时间复杂度为O(n + k)，最好的情况为线性时间，最坏的则为O(n ^ 2)。根据桶的划分大小，桶越小，排序的时间自然开销少，但是对应的需求的空间会增大。</p>
+<p>​        空间复杂度：O(n * k)</p>
 <blockquote>
-<p>节点：指的是一个网络端口，如交换机、网关、路由器、防火墙等设备的端口</p>
+<p>看完此文可以在力扣上轻松解决以下问题：</p>
 </blockquote>
-<h4 id="总线型结构："><a href="#总线型结构：" class="headerlink" title="总线型结构："></a>总线型结构：</h4><p>​    是指各工作站和服务器均挂在一条总线上，各工作站地位平等，无中心节点控制，它结构简单、可扩充性好、安装容易，但维护困难。</p>
-<h4 id="环型结构："><a href="#环型结构：" class="headerlink" title="环型结构："></a>环型结构：</h4><p>​    由网络中若干结点通过通信链路首尾相连形成一个闭合的环，这种结构使公共传输电缆组成环状，数据在环路中沿着一个方向在各个节点间传输，信息从一个节点传到另一个节点。它实时性强、传输控制容易，但维护困难，可靠性不高。</p>
-<blockquote>
-<p>结点：指的是一台具体的网络设备，因为它们通常连接多个“节点”，故称之为“结点”</p>
-<p>链路：是两个节点间的线路</p>
-</blockquote>
-<h4 id="网状结构："><a href="#网状结构：" class="headerlink" title="网状结构："></a>网状结构：</h4><p>​    它是指每台设备之间均有点到点的链路连接，这种连接不经济，只有每个站点都要频繁发送信息时才使用这种方法。它的安装也比较复杂，但系统可靠性高，容错能力强。有时也称为分布式结构。</p>
-<blockquote>
-<p>通路：是从发出信息的节点到接收信息的节点之间的一串节点和链路的组合</p>
-</blockquote>
-<h4 id="树型结构："><a href="#树型结构：" class="headerlink" title="树型结构："></a>树型结构：</h4><p>​    这是一种分级的集中控制式网络，与星型相比，它的通信线路总长度短，成本较低、节点易于扩充、寻找路径方便，但除了叶节点及其相连的线路外，任一节点或其相连的线路故障都会使系统受到影响。</p>
-<blockquote>
+<p>​    在上文介绍完计数排序之后你会发现，计数排序的一个缺陷不仅仅只是用空间来换取时间，在原理中讲到，只适用于较小的正整数，虽然可以通过取正来实现对负数的排序。但是如果是小数呢，数组的index可不能是小数。</p>
+<h3 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1.算法思想"></a>1.算法思想</h3><blockquote>
+<p>全文代码通过JavaScript实现</p>
 <p>参考资料：</p>
-<p>[1]:谢希仁. 第7版. 计算机网络. 电子工业出版社.</p>
+<p>[1]:<a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/">https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/</a></p>
 </blockquote>
 
             </div>
@@ -287,7 +281,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -295,7 +289,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%BB%93%E6%9E%84/">结构</a>
+                      <a class="hover-with-bg" href="/tags/LeetCode/">LeetCode</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A1%B6%E6%8E%92%E5%BA%8F/">桶排序</a>
                     
                   </div>
                 
@@ -307,29 +305,6 @@
                   
                 </p>
               
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/11/18/%E6%B5%85%E8%B0%88%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">常见数据结构</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/11/17/%E6%B5%85%E8%B0%88%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE/">
-                        <span class="hidden-mobile">浅谈语义化标签</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
