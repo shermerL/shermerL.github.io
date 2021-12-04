@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="shermer">
+  <meta name="keywords" content="">
+  <meta name="description" content="JS数组的一些常用方法这里介绍一些在写算法的过程中总结的常用的操作数组的方法： 新建一个数组对象 1234567const peoples&#x3D;[    &amp;#123;name:&amp;#x27;sherlock&amp;#x27;,age:23&amp;#125;,    &amp;#123;name:&amp;#x27;david&amp;#x27;,age:45&amp;#125;,    &amp;#123;name:&amp;#x27;tom&amp;#x27;,age">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS数组的一些常用方法">
+<meta property="og:url" content="https://yykaoyanupup.xyz/posts/b2537d69">
+<meta property="og:site_name" content="shermer">
+<meta property="og:description" content="JS数组的一些常用方法这里介绍一些在写算法的过程中总结的常用的操作数组的方法： 新建一个数组对象 1234567const peoples&#x3D;[    &amp;#123;name:&amp;#x27;sherlock&amp;#x27;,age:23&amp;#125;,    &amp;#123;name:&amp;#x27;david&amp;#x27;,age:45&amp;#125;,    &amp;#123;name:&amp;#x27;tom&amp;#x27;,age">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-04T02:14:36.000Z">
+<meta property="article:modified_time" content="2021-12-04T07:20:21.249Z">
+<meta property="article:author" content="shermer">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>JS数组的一些常用方法 - shermer</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yykaoyanupup.xyz","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"7498bafdc13616b6c0c81baef8fb6645","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","app_key":"2A905bAsfam8HrXLbOBAAX0y","server_url":"https://hco1yxjb.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>吃小孩的前端Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="JS数组的一些常用方法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-04 10:14" pubdate>
+        2021年12月4日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JS数组的一些常用方法</h1>
+            
+            <div class="markdown-body">
+              <h2 id="JS数组的一些常用方法"><a href="#JS数组的一些常用方法" class="headerlink" title="JS数组的一些常用方法"></a>JS数组的一些常用方法</h2><p>这里介绍一些在写算法的过程中总结的常用的操作数组的方法：</p>
+<p>新建一个数组对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> peoples=[<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;sherlock&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">23</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;david&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">45</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;tom&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">34</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;jerry&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">16</span>&#125;,<br>    &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;rita&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">103</span>&#125;<br>]<br></code></pre></div></td></tr></table></figure>
+<p>以下的方法均基于此数组进行操作</p>
+<h3 id="1-flier"><a href="#1-flier" class="headerlink" title="1.flier()"></a>1.flier()</h3><p>  Array.prototype.fliter()，返回值是一个新的、由通过测试的元素组成的数组，如果没有任何数组元素通过测试，则返回空数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> peopleFliter=peoples.filter(<span class="hljs-function">(<span class="hljs-params">names</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">return</span> names.age&lt;=<span class="hljs-number">50</span><br>&#125;)<br><span class="hljs-built_in">console</span>.log(peopleFliter)<br></code></pre></div></td></tr></table></figure>
+<h3 id="2-map"><a href="#2-map" class="headerlink" title="2.map()"></a>2.map()</h3><p>  对象保存键值对，并且能够记住键的原始插入顺序。任何值(对象或者原始值) 都可以作为一个键或一个值。所有的 <code>Map</code> 对象实例都会继承 <code>Map.prototype</code></p>
+<p>  map在实际使用常用于数组的去重等操作，由于js中没有Hashmap,但Hashmap其实是map的底层实现，通过map.has()和map.set()的配合可以实现去除数组重复值的效果。map这里只是简单的介绍下，后续还需更细致的去理解</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> peopleNames=peoples.map(<span class="hljs-function">(<span class="hljs-params">names</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> names.name<br>&#125;)<br><span class="hljs-built_in">console</span>.log(peopleNames)<br></code></pre></div></td></tr></table></figure>
+<p>  如果放在浏览器中执行会看到以下结果,也就是上述所说的键值对的存储方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">[<span class="hljs-string">&#x27;sherlock&#x27;</span>, <span class="hljs-string">&#x27;david&#x27;</span>, <span class="hljs-string">&#x27;tom&#x27;</span>, <span class="hljs-string">&#x27;jerry&#x27;</span>, <span class="hljs-string">&#x27;rita&#x27;</span>]<br><span class="hljs-number">0</span>: <span class="hljs-string">&quot;sherlock&quot;</span><br><span class="hljs-number">1</span>: <span class="hljs-string">&quot;david&quot;</span><br><span class="hljs-number">2</span>: <span class="hljs-string">&quot;tom&quot;</span><br><span class="hljs-number">3</span>: <span class="hljs-string">&quot;jerry&quot;</span><br><span class="hljs-number">4</span>: <span class="hljs-string">&quot;rita&quot;</span><br><span class="hljs-attr">length</span>: <span class="hljs-number">5</span><br>[[Prototype]]: <span class="hljs-built_in">Array</span>(<span class="hljs-number">0</span>)<br></code></pre></div></td></tr></table></figure>
+<h4 id="2-1-放上一道LeetCode原题"><a href="#2-1-放上一道LeetCode原题" class="headerlink" title="2.1 放上一道LeetCode原题"></a>2.1 放上一道LeetCode原题</h4><p> <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-duplicate-number/">287. 寻找重复数</a> ：</p>
+<p>通过哈希表找到重复的值很好理解也很方便，将元素一个一个存入map，如果已经存了那就返回这个重复的值。</p>
+<p>题解：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> findDuplicate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">nums</span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> set = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>()<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> item <span class="hljs-keyword">of</span> nums) &#123;<br>        <span class="hljs-keyword">if</span> (set.has(item)) <span class="hljs-keyword">return</span> item<br>        set.add(item)<br>    &#125;<br>    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+<h3 id="3-find"><a href="#3-find" class="headerlink" title="3.find()"></a>3.find()</h3><p>  Array.prototype.find()，返回数组中满足提供的测试函数的第一个元素的值。否则返回 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined"><code>undefined</code></a>。也就是说这个方法仅返回一个元素的值,如果是要找到索引的话，可以使用findIndex()方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> findPeople=peoples.find(<span class="hljs-function">(<span class="hljs-params">names</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">return</span> names.name===<span class="hljs-string">&#x27;tom&#x27;</span><br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<h3 id="4-forEach"><a href="#4-forEach" class="headerlink" title="4.forEach()"></a>4.forEach()</h3><p>  Array.prototype.forEach(),对数组的每个元素执行一次给定的函数。forEach()被调用时，不会改变原数组,改方法按升序为数组中含有效值的每一项执行一次 <code>callback</code> 函数，那些已删除或者未初始化的项将被跳过（例如在稀疏数组上）。这里只是打印出了数组的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">peoples.forEach(<span class="hljs-function">(<span class="hljs-params">names</span>)=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(names.name)<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<h3 id="5-some"><a href="#5-some" class="headerlink" title="5.some()"></a>5.some()</h3><p>  Array.prototype.some(),改方法测试数组中是不是<strong>至少</strong>有1个元素通过了被提供的函数测试。它返回的是一个Boolean类型的值。空数组在任何情况下返回的都是false</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> hasAge=peoples.some(<span class="hljs-function">(<span class="hljs-params">names</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">return</span> names.age&lt;=<span class="hljs-number">50</span><br>&#125;)<br><span class="hljs-built_in">console</span>.log(hasAge)<br></code></pre></div></td></tr></table></figure>
+<h3 id="6-every"><a href="#6-every" class="headerlink" title="6.every()"></a>6.every()</h3><p>  Array.prototype.every(),该方法测试一个数组内的所有元素是否<strong>都能</strong>通过某个指定函数的测试。它同样返回一个布尔值。可以和some()对照着看</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> hasAges=peoples.every(<span class="hljs-function">(<span class="hljs-params">names</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">return</span> names.age&lt;=<span class="hljs-number">50</span><br>&#125;)<br><span class="hljs-built_in">console</span>.log(hasAges)<br></code></pre></div></td></tr></table></figure>
+<h3 id="7-reduce"><a href="#7-reduce" class="headerlink" title="7.reduce()"></a>7.reduce()</h3><p>Array.prototype.reduce(),该方法对数组中的每个元素执行一个由您提供的<strong>reducer</strong>函数(升序执行)，将其结果汇总为单个返回值。返回值是函数累计处理的结果，这个特性就很适合用来计算数组的总和，<code>initialValue</code>作为第一次调用 <code>callback</code>函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素。 在没有初始值的空数组上调用 reduce 将报错。可以在MDN上了解更详细的传参介绍。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> total=peoples.reduce(<span class="hljs-function">(<span class="hljs-params">currentTotal,names</span>)=&gt;</span>&#123;<br>    <span class="hljs-keyword">return</span> names.age+currentTotal<br>&#125;,<span class="hljs-number">0</span>)<br><br><span class="hljs-built_in">console</span>.log(total)<br></code></pre></div></td></tr></table></figure>
+<h4 id="7-1-放上一道LeetCode原题"><a href="#7-1-放上一道LeetCode原题" class="headerlink" title="7.1 放上一道LeetCode原题"></a>7.1 放上一道LeetCode原题</h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations/">1005. K 次取反后最大化的数组和</a>  ：</p>
+<p>这道题的思路也简单，k次取反取最大值，首先想到的就是如果数组里有负数，那就需要优先对负数取反，如果没有负数，那就是只对数组中最小值取反，这样才能达到最大化的数组和。然后就是数组求和，写一个累加函数，自然而然就用上了reduce()，一气呵成。要想达到最优解还有优化的空间，这里只是我个人的题解思考。</p>
+<p>题解:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> largestSumAfterKNegations = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> ans,dp<br>    <span class="hljs-keyword">while</span>(k)&#123;<br>        ans=<span class="hljs-built_in">Math</span>.min(...nums)<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i]==ans)&#123;<br>                dp=i<br>                <span class="hljs-keyword">break</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(ans&lt;<span class="hljs-number">0</span>)<br>            &#123;<br>              nums[dp]+=-<span class="hljs-number">2</span>*nums[dp]  <br>            &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            nums[dp]+=-<span class="hljs-number">2</span>*nums[dp]<br>        &#125;<br>        k--<br>    &#125;<br>    <span class="hljs-keyword">return</span> nums.reduce(add,<span class="hljs-number">0</span>)<br>&#125;;<br><span class="hljs-comment">//用于求和</span><br><span class="hljs-keyword">var</span>  add = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> a, b </span>) </span>&#123;<br>     <span class="hljs-keyword">return</span> a+b;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h3 id="8-includes"><a href="#8-includes" class="headerlink" title="8.includes()"></a>8.includes()</h3><p>   Array.prototype.includes(),该方法用来判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 <code>true</code>，否则返回 <code>false</code>。使用 <code>includes()</code>比较字符串和字符时是区分大小写的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> items=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-keyword">const</span> includesN=items.includes(<span class="hljs-number">2</span>)<br></code></pre></div></td></tr></table></figure>
+<p>以上是比较常用的操作数组的方法，还有更多后续介绍</p>
+<blockquote>
+<p>全文代码通过JavaScript实现</p>
+<p>参考资料：</p>
+<p>[1]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter</a></p>
+<p>[2]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map</a></p>
+<p>[3]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find</a></p>
+<p>[4]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach</a></p>
+<p>[5]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some</a></p>
+<p>[6]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every#%E8%AF%AD%E6%B3%95">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every#%E8%AF%AD%E6%B3%95</a></p>
+<p>[7]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></p>
+<p>[8]:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#%E8%AF%AD%E6%B3%95">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#%E8%AF%AD%E6%B3%95</a></p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/JavaScript/">JavaScript</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/JavaScript/">JavaScript</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/15242">
+                        <span class="hidden-mobile">《You Don't Know JS》学习之了解作用域</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","appKey":"2A905bAsfam8HrXLbOBAAX0y","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> theme <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> used by <a target="_blank" href="https://github.com/shermerL" rel="nofollow noopener noopener"><span>shermer</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7498bafdc13616b6c0c81baef8fb6645";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
