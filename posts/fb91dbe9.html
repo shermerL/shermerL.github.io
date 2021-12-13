@@ -18,22 +18,21 @@
   <meta name="description" content="">
   <meta name="author" content="shermer">
   <meta name="keywords" content="">
-  <meta name="description" content="计数排序复杂度分析：​        时间复杂度：O(n+k)，即线性时间，k为给定数据中的最大值（k为整数范围），而其他的排序方法则最好的情况才是O(nlgn)。这是计数排序用空间换取时间的便利，也是计数排序只在特定情况才能使用的缺陷。 ​        空间复杂度：总的空间复杂度为O(n+k)，因为用到了另一个数组O(k)用于存储。  看完此文可以在力扣上轻松解决以下问题： 274. H 指数">
+  <meta name="description" content="Hexo之优化文章链接​    在给博客绑定完域名后，终于实现了直接通过域名访问。但是总觉得又少了什么，能不能在搜索引擎中找到我的博客呢？于是在一番搜索下，无一例外的都是提示没有找到该URL。又是在一番搜索之下，了解到需要给自己的网站做SEO，提交SiteMap给搜索引擎。期间在提交SiteMap过程中，看到提交的URL文章结构层级实在复杂，文章链接默认的生成规则是：:year&#x2F;:month&#x2F;:d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode上的那些计数排序">
-<meta property="og:url" content="https://yykaoyanupup.xyz/posts/62795">
+<meta property="og:title" content="Hexo之优化文章链接">
+<meta property="og:url" content="https://yykaoyanupup.xyz/posts/fb91dbe9">
 <meta property="og:site_name" content="shermer">
-<meta property="og:description" content="计数排序复杂度分析：​        时间复杂度：O(n+k)，即线性时间，k为给定数据中的最大值（k为整数范围），而其他的排序方法则最好的情况才是O(nlgn)。这是计数排序用空间换取时间的便利，也是计数排序只在特定情况才能使用的缺陷。 ​        空间复杂度：总的空间复杂度为O(n+k)，因为用到了另一个数组O(k)用于存储。  看完此文可以在力扣上轻松解决以下问题： 274. H 指数">
+<meta property="og:description" content="Hexo之优化文章链接​    在给博客绑定完域名后，终于实现了直接通过域名访问。但是总觉得又少了什么，能不能在搜索引擎中找到我的博客呢？于是在一番搜索下，无一例外的都是提示没有找到该URL。又是在一番搜索之下，了解到需要给自己的网站做SEO，提交SiteMap给搜索引擎。期间在提交SiteMap过程中，看到提交的URL文章结构层级实在复杂，文章链接默认的生成规则是：:year&#x2F;:month&#x2F;:d">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-09T02:04:20.000Z">
-<meta property="article:modified_time" content="2021-12-13T05:30:42.293Z">
+<meta property="article:published_time" content="2021-11-21T05:26:53.000Z">
+<meta property="article:modified_time" content="2021-12-13T06:23:00.097Z">
 <meta property="article:author" content="shermer">
-<meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="排序">
-<meta property="article:tag" content="计数排序">
+<meta property="article:tag" content="优化">
+<meta property="article:tag" content="插件">
 <meta name="twitter:card" content="summary_large_image">
   
-  <title>LeetCode上的那些计数排序 - shermer</title>
+  <title>Hexo之优化文章链接 - shermer</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -191,7 +190,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="LeetCode上的那些计数排序">
+            <span class="h2" id="subtitle" title="Hexo之优化文章链接">
               
             </span>
 
@@ -201,8 +200,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-11-09 10:04" pubdate>
-        2021年11月9日 上午
+      <time datetime="2021-11-21 13:26" pubdate>
+        2021年11月21日 下午
       </time>
     </span>
   
@@ -212,7 +211,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.3k 字
+      1.3k 字
     </span>
   
 
@@ -221,7 +220,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      4 分钟
     </span>
   
 
@@ -258,45 +257,24 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LeetCode上的那些计数排序</h1>
+            <h1 style="display: none">Hexo之优化文章链接</h1>
             
             <div class="markdown-body">
-              <h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><h3 id="复杂度分析："><a href="#复杂度分析：" class="headerlink" title="复杂度分析："></a>复杂度分析：</h3><p>​        时间复杂度：O(n+k)，即线性时间，k为给定数据中的最大值（k为整数范围），而其他的排序方法则最好的情况才是O(nlgn)。这是计数排序用空间换取时间的便利，也是计数排序只在特定情况才能使用的缺陷。</p>
-<p>​        空间复杂度：总的空间复杂度为O(n+k)，因为用到了另一个数组O(k)用于存储。</p>
+              <h2 id="Hexo之优化文章链接"><a href="#Hexo之优化文章链接" class="headerlink" title="Hexo之优化文章链接"></a>Hexo之优化文章链接</h2><p>​    在给博客绑定完域名后，终于实现了直接通过域名访问。但是总觉得又少了什么，能不能在搜索引擎中找到我的博客呢？于是在一番搜索下，无一例外的都是提示没有找到该URL。又是在一番搜索之下，了解到需要给自己的网站做SEO，提交SiteMap给搜索引擎。期间在提交SiteMap过程中，看到提交的URL文章结构层级实在复杂，文章链接默认的生成规则是：<code>:year/:month/:day/:title</code>，这相当于访问了三层目录，不利于SEO。最终我在github上找到了合适的解决方案。</p>
 <blockquote>
-<p>看完此文可以在力扣上轻松解决以下问题：</p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/h-index/">274. H 指数</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/array-partition-i/">561. 数组拆分 I</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-an-array/">912. 排序数组</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/height-checker/">1051. 高度检查器</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/relative-sort-array/">1122. 数组的相对排序</a></p>
-<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/0H97ZC/">剑指 Offer II 075. 数组相对排序</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a> 插件</p>
+<p>A Hexo plugin to generate static post link based on post titles.</p>
 </blockquote>
-<p>​        偶然间在力扣上看到一排序的题，便点了进去。<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-an-array/">912. 排序数组</a></p>
-<p>题目意思很简单将数组升序排列，如果是为了快速解题的话，直接出结果，用sort()方法一步就行，但看了看难度，怎么是个中等题。于是在题库的归类里赫然看到“<strong>计数排序</strong>”这四个大字。那便来学习下计数排序</p>
-<p>​        计数排序英文名：Counting Sort，顾名思义。注意这里有个中文读音很像的<strong>“基数排序”</strong>，两者是有所不同的，基数排序英文是：Radix sort，radix英文中意思是基数，而基数在数学中是集合论的一个概念，两个能够建立元素间一一对应的集合称为互相对等集合，基数排序这里暂且不提。</p>
-<h3 id="1-算法思想"><a href="#1-算法思想" class="headerlink" title="1.算法思想"></a>1.算法思想</h3><p>​        首先计数排序从字面意思上就可以看出来，计算数字。这是一个稳定的非比较排序算法。一种基于特定范围内的键值的排序。通过计算具有不同键值的对象的数量，然后来得出每个对象在输出序列中的位置。有另一种不借助额外的存储空间的，只使用计数数组作为辅助存储，但是这种修改后的并不稳定。</p>
-<hr>
-<p>​    In computer science, <strong>counting sort</strong> is an algorithm for sorting a collection of objects according to keys that are small positive integers; that is, it is an integer sorting algorithm.                                                                     ——from wikipedia</p>
-<hr>
-<h3 id="2-排序思路"><a href="#2-排序思路" class="headerlink" title="2.排序思路"></a>2.排序思路</h3><p>​        通过数组实现，将原数组中整数的值，作为索引，在另一个数组上对应的索引累加。也就是说，不通过比较，而是索引下标确定值的位置。然后遍历目标数组，依次输出就是排序后的结果。一般用于比较小的正整数，太大会造成目标数组空间的浪费。keys 可以理解为 index的键， 既然将值作为索引，那负数是不支持的。但是为了对负数也能够排序，在初始化数组空间的时候，可以通过加上一个固定的值（max-min+1），来实现对负数的取正。 </p>
-<h3 id="3-实际应用"><a href="#3-实际应用" class="headerlink" title="3.实际应用"></a>3.实际应用</h3><p>​        下面以力扣的912.排序数组为例：</p>
-<p>示例：</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs accesslog">Input:<br><span class="hljs-string">[1, 3, 2, 8, 5, 1, 5, 1, 2, 7]</span><br>Output:<br><span class="hljs-string">[1, 1, 1, 2, 2, 3, 5, 5, 7, 8]</span><br></code></pre></div></td></tr></table></figure>
-<p>首先需要初始化三个变量，max用于计算数据最大值，dp初始化为空数组用于输出，ans用于构建计数数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> sortArray = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> max=<span class="hljs-built_in">Math</span>.max(...nums)<br>    <span class="hljs-keyword">let</span> dp =[]<br>    <span class="hljs-keyword">let</span> ans=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(max+<span class="hljs-number">1</span>).fill(<span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> d <span class="hljs-keyword">of</span> nums)&#123;<br>        ans[d]++<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span>; k &lt;= max; k++)&#123;<br>        <span class="hljs-keyword">while</span>(ans[k]-- &gt; <span class="hljs-number">0</span>)&#123;<br>            dp.push(k);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp<br>&#125;;<br></code></pre></div></td></tr></table></figure>
-<p>​        这个时候就算是写完了，但是拿去测试的时候你会发现报错了。为什么呢？题目中给出的数据范围是：[-50000,50000]，这时候你看完了前面的内容可能会想了，计数排序无法适用于负数的原因就是将值作为索引，那么索引一定不能是负的。出错的原因就在这！前面也提到了有解决的办法，其实很简单。只需要稍加修改.</p>
-<p>​        添加变量min用于计算数据中的最小值，在数组初始化的时候，空间大小初始化为max-min+1，也就是间接的将负数对应的索引”取正“。这里在后面的几个循环中需要注意循环截止的条件！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> sortArray = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;<br>    <span class="hljs-keyword">let</span> max=<span class="hljs-built_in">Math</span>.max(...nums)<br>    <span class="hljs-keyword">let</span> min=<span class="hljs-built_in">Math</span>.min(...nums)<br>    <span class="hljs-keyword">let</span> dp =[]<br>    <span class="hljs-keyword">let</span> ans=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(max-min+<span class="hljs-number">1</span>).fill(<span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> d <span class="hljs-keyword">of</span> nums)&#123;<br>        ans[d-min]++<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span>; k &lt;= max-min+<span class="hljs-number">1</span>; k++)&#123;<br>        <span class="hljs-keyword">while</span>(ans[k]-- &gt; <span class="hljs-number">0</span>)&#123;<br>            dp.push(k+min);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp<br>&#125;;<br></code></pre></div></td></tr></table></figure>
-<p>​        写到此，计数排序的代码已经完成了，有兴趣的可以试试原地排序。</p>
-<p>​        特别需要提到的，在翻阅了很多资料中，并没有给出过Js的计数排序模板，Js的数组也不是实际意义上的数组，而是对象，还有很多方法可以用来优化以上代码，但思路始终是这个思路，这里暂且不提。</p>
-<blockquote>
-<p>全文代码通过JavaScript实现</p>
-<p>参考资料：</p>
-<p>[1]:<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Counting_sort">https://en.wikipedia.org/wiki/Counting_sort</a></p>
-<p>[2]:<a target="_blank" rel="noopener" href="https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/">https://leetcode-cn.com/leetbook/read/journey-of-algorithm/5reklv/</a></p>
-<p>[3]:<a target="_blank" rel="noopener" href="https://medium.com/javascript-algorithms/javascript-algorithms-counting-sort-c94a5fd70c9c">https://medium.com/javascript-algorithms/javascript-algorithms-counting-sort-c94a5fd70c9c</a></p>
-</blockquote>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>​    先在博客文件夹下安装改插件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs npm">npm install hexo-abbrlink --save<br></code></pre></div></td></tr></table></figure>
+<h2 id="2-配置插件"><a href="#2-配置插件" class="headerlink" title="2.配置插件"></a>2.配置插件</h2><p>​    在项目的_config.yml文件中加上permalink字段</p>
+<figure class="highlight yml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://yykaoyanupup.xyz/</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">posts/:abbrlink.html</span>  <span class="hljs-comment"># 此处可以自己设置，也可以直接使用 :/abbrlink</span><br><span class="hljs-attr">abbrlink:</span><br>    <span class="hljs-attr">alg:</span> <span class="hljs-string">crc32</span>   <span class="hljs-comment">#算法： crc16(default) and crc32</span><br>    <span class="hljs-attr">rep:</span> <span class="hljs-string">hex</span>     <span class="hljs-comment">#进制： dec(default) and hex</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="3-实现细节"><a href="#3-实现细节" class="headerlink" title="3.实现细节"></a>3.实现细节</h2><p>可以看到abbrlink配置了alg和rep，这里简单介绍下配置内容</p>
+<h3 id="3-1：CRC"><a href="#3-1：CRC" class="headerlink" title="3-1：CRC"></a>3-1：CRC</h3><p>​    CRC本身是“冗余校验码”,在计算机网络中有接触过，在数据存储和数据通讯领域，为了保证数据的正确，就不得不采用检错的手段 。如果要实现差错检验，必须在发送数据的后面增加校验码，否则实现不了。校验码的值由校验方法决定。CRC循环冗余校验的细节这里先不做介绍，一般网卡的生成多项式都是CRC-16或者32。位数很多。这样就降低漏检率。比奇偶校验强多，效率也高。CRC32就是表示会产生一个32bit（8位十六进制数）的校验值。</p>
+<h3 id="3-2：hex"><a href="#3-2：hex" class="headerlink" title="3-2：hex"></a>3-2：hex</h3><p>​    Hex是一种编码吗，就是把一个8位的字节数据用两个十六进制数展示出来，编码时，将8位二进制码重新分组成两个4位的字节，其中一个字节的低4位是原字节的高四位，另一个字节的低4位是原数据的低4位，高4位都补0，然后输出这两个字节对应十六进制数字作为编码。Hex编码后的长度是源数据的2倍</p>
+<h2 id="4-优化效果"><a href="#4-优化效果" class="headerlink" title="4.优化效果"></a>4.优化效果</h2><p>配置不同校验码和编码格式会对生成的ID有不同的效果，这里展示一些样例：</p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css">crc16 &amp; hex<br>https://post.zz173.com/posts/<span class="hljs-number">66</span>c8.html<br><br>crc16 &amp; dec<br>https://post.zz173.com/posts/<span class="hljs-number">65535</span>.html<br>crc32 &amp; hex<br>https://post.zz173.com/posts/<span class="hljs-number">8</span>ddf18fb.html<br><br>crc32 &amp; dec<br>https://post.zz173.com/posts/<span class="hljs-number">1690090958</span>.html<br></code></pre></div></td></tr></table></figure>
+<p>配置完成后通过hexo三连会发现，文章的层次目录也发生了改变，文章新增了abbrlink字段，这样链接就确定下来了，无论怎样更改文章都不会对链接产生影响。</p>
 
             </div>
             <hr>
@@ -306,7 +284,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/Hexo/">Hexo</a>
                     
                   </div>
                 
@@ -314,11 +292,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/LeetCode/">LeetCode</a>
+                      <a class="hover-with-bg" href="/tags/%E4%BC%98%E5%8C%96/">优化</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a>
+                      <a class="hover-with-bg" href="/tags/%E6%8F%92%E4%BB%B6/">插件</a>
                     
                   </div>
                 
@@ -335,15 +311,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/38382">
+                      <a href="/posts/46326">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">《You Don't Know JS》学习之小序</span>
+                        <span class="hidden-mobile">【第二期】vue3 工具函数源码阅读</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/38382">
+                        <span class="hidden-mobile">《You Don't Know JS》学习之小序</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

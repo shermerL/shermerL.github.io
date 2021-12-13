@@ -108,6 +108,33 @@
   
   
   <entry>
+    <title>Hexo之优化文章链接</title>
+    <link href="/posts/fb91dbe9.html"/>
+    <url>/posts/fb91dbe9.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo之优化文章链接"><a href="#Hexo之优化文章链接" class="headerlink" title="Hexo之优化文章链接"></a>Hexo之优化文章链接</h2><p>​    在给博客绑定完域名后，终于实现了直接通过域名访问。但是总觉得又少了什么，能不能在搜索引擎中找到我的博客呢？于是在一番搜索下，无一例外的都是提示没有找到该URL。又是在一番搜索之下，了解到需要给自己的网站做SEO，提交SiteMap给搜索引擎。期间在提交SiteMap过程中，看到提交的URL文章结构层级实在复杂，文章链接默认的生成规则是：<code>:year/:month/:day/:title</code>，这相当于访问了三层目录，不利于SEO。最终我在github上找到了合适的解决方案。</p><blockquote><p><a href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a> 插件</p><p>A Hexo plugin to generate static post link based on post titles.</p></blockquote><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>​    先在博客文件夹下安装改插件：</p><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs npm">npm install hexo-abbrlink --save<br></code></pre></div></td></tr></table></figure><h2 id="2-配置插件"><a href="#2-配置插件" class="headerlink" title="2.配置插件"></a>2.配置插件</h2><p>​    在项目的_config.yml文件中加上permalink字段</p><figure class="highlight yml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yml"><span class="hljs-attr">url:</span> <span class="hljs-string">https://yykaoyanupup.xyz/</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">posts/:abbrlink.html</span>  <span class="hljs-comment"># 此处可以自己设置，也可以直接使用 :/abbrlink</span><br><span class="hljs-attr">abbrlink:</span><br>    <span class="hljs-attr">alg:</span> <span class="hljs-string">crc32</span>   <span class="hljs-comment">#算法： crc16(default) and crc32</span><br>    <span class="hljs-attr">rep:</span> <span class="hljs-string">hex</span>     <span class="hljs-comment">#进制： dec(default) and hex</span><br></code></pre></div></td></tr></table></figure><h2 id="3-实现细节"><a href="#3-实现细节" class="headerlink" title="3.实现细节"></a>3.实现细节</h2><p>可以看到abbrlink配置了alg和rep，这里简单介绍下配置内容</p><h3 id="3-1：CRC"><a href="#3-1：CRC" class="headerlink" title="3-1：CRC"></a>3-1：CRC</h3><p>​    CRC本身是“冗余校验码”,在计算机网络中有接触过，在数据存储和数据通讯领域，为了保证数据的正确，就不得不采用检错的手段 。如果要实现差错检验，必须在发送数据的后面增加校验码，否则实现不了。校验码的值由校验方法决定。CRC循环冗余校验的细节这里先不做介绍，一般网卡的生成多项式都是CRC-16或者32。位数很多。这样就降低漏检率。比奇偶校验强多，效率也高。CRC32就是表示会产生一个32bit（8位十六进制数）的校验值。</p><h3 id="3-2：hex"><a href="#3-2：hex" class="headerlink" title="3-2：hex"></a>3-2：hex</h3><p>​    Hex是一种编码吗，就是把一个8位的字节数据用两个十六进制数展示出来，编码时，将8位二进制码重新分组成两个4位的字节，其中一个字节的低4位是原字节的高四位，另一个字节的低4位是原数据的低4位，高4位都补0，然后输出这两个字节对应十六进制数字作为编码。Hex编码后的长度是源数据的2倍</p><h2 id="4-优化效果"><a href="#4-优化效果" class="headerlink" title="4.优化效果"></a>4.优化效果</h2><p>配置不同校验码和编码格式会对生成的ID有不同的效果，这里展示一些样例：</p><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css">crc16 &amp; hex<br>https://post.zz173.com/posts/<span class="hljs-number">66</span>c8.html<br><br>crc16 &amp; dec<br>https://post.zz173.com/posts/<span class="hljs-number">65535</span>.html<br>crc32 &amp; hex<br>https://post.zz173.com/posts/<span class="hljs-number">8</span>ddf18fb.html<br><br>crc32 &amp; dec<br>https://post.zz173.com/posts/<span class="hljs-number">1690090958</span>.html<br></code></pre></div></td></tr></table></figure><p>配置完成后通过hexo三连会发现，文章的层次目录也发生了改变，文章新增了abbrlink字段，这样链接就确定下来了，无论怎样更改文章都不会对链接产生影响。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>优化</tag>
+      
+      <tag>插件</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>《You Don&#39;t Know JS》学习之小序</title>
     <link href="/posts/38382.html"/>
     <url>/posts/38382.html</url>
