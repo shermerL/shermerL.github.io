@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/touxiang_002.png">
+  <link rel="icon" href="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/touxiang_002.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="shermer">
+  <meta name="keywords" content="">
+  <meta name="description" content="1.说UX设计师所说:1.1：关键词​    在用户体验设计领域，最重要的术语之一是 “用户”。用户是指任何使用产品的人。此外，终端用户是用户体验设计师为之创造的特定受众。作为用户体验设计师，我们的目标是从终端用户的角度来思考问题和需求，并设计一种体验来满足这些需求。 ​    当谈到评估用户体验时，有几个关键问题需要研究。产品容易使用吗？产品是公平的吗？产品是否让用户满意？产品是否解决了用户的问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Foundations of User Experience (UX) Design (二)">
+<meta property="og:url" content="https://yykaoyanupup.xyz/posts/a1bd1622">
+<meta property="og:site_name" content="不止前端">
+<meta property="og:description" content="1.说UX设计师所说:1.1：关键词​    在用户体验设计领域，最重要的术语之一是 “用户”。用户是指任何使用产品的人。此外，终端用户是用户体验设计师为之创造的特定受众。作为用户体验设计师，我们的目标是从终端用户的角度来思考问题和需求，并设计一种体验来满足这些需求。 ​    当谈到评估用户体验时，有几个关键问题需要研究。产品容易使用吗？产品是公平的吗？产品是否让用户满意？产品是否解决了用户的问">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-29T12:12:36.000Z">
+<meta property="article:modified_time" content="2022-03-09T07:03:10.621Z">
+<meta property="article:author" content="shermer">
+<meta property="article:tag" content="Google">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>Foundations of User Experience (UX) Design (二) - 不止前端</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yykaoyanupup.xyz","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"7498bafdc13616b6c0c81baef8fb6645","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","app_key":"2A905bAsfam8HrXLbOBAAX0y","server_url":"https://hco1yxjb.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>不止前端</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/bgimg_002.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Foundations of User Experience (UX) Design (二)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-29 12:12" pubdate>
+        2022年1月29日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.9k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      18 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Foundations of User Experience (UX) Design (二)</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年3月9日 早上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="1-说UX设计师所说"><a href="#1-说UX设计师所说" class="headerlink" title="1.说UX设计师所说:"></a>1.说UX设计师所说:</h2><h4 id="1-1：关键词"><a href="#1-1：关键词" class="headerlink" title="1.1：关键词"></a>1.1：关键词</h4><p>​    在用户体验设计领域，最重要的术语之一是 “用户”。<strong>用户</strong>是指任何使用产品的人。此外，终端用户是用户体验设计师为之创造的特定受众。作为用户体验设计师，我们的目标是从<strong>终端用户</strong>的角度来思考问题和需求，并设计一种体验来满足这些需求。</p>
+<p>​    当谈到评估<strong>用户体验</strong>时，有几个关键问题需要研究。产品容易使用吗？产品是公平的吗？产品是否让用户满意？产品是否解决了用户的问题？正如我们之前所了解的，对这些问题的回答是肯定的，都是一个好的用户体验的目标。而作为一个用户体验设计师，需要把最终用户作为你的主要优先事项。</p>
+<h4 id="1-2：以用户为中心"><a href="#1-2：以用户为中心" class="headerlink" title="1.2：以用户为中心"></a>1.2：以用户为中心</h4><p>​    以用户为中心的设计将用户放在前面和中心。关注用户意味着考虑他们的故事、情感和你所收集的关于他们的见解。为了保持对用户的关注，以用户为中心的设计过程有四个步骤：<strong>理解、指定、设计和评估</strong>。</p>
+<p>​    遵循这个框架可以帮助我们建立人们真正想要使用的产品。首先，了解用户如何体验产品或类似产品。真正理解终端用户需要大量的研究。接下来，明确终端用户的需求。根据你的研究，缩小哪个最终用户的问题是最需要解决的。然后，为最终用户的问题设计解决方案。这时，要想出产品可能是什么样子的想法，并实际开始制造产品。</p>
+<p>​    最后，根据终端用户的需求来评估设计。是否解决了终端用户的问题？可以通过与真实的人测试你的产品来做到这一点。重要的是要记住，在经历这个过程时，迭代是关键。<strong>迭代</strong>意味着再做一次，通过在以前的版本基础上进行调整。</p>
+<h2 id="2-想UX设计师所想"><a href="#2-想UX设计师所想" class="headerlink" title="2.想UX设计师所想"></a>2.想UX设计师所想</h2><p>在开始设计之前，对每个框架有一个扎实的了解是很有帮助的，下列为五个框架的介绍。</p>
+<h4 id="2-1：以用户为中心的设计-（一）"><a href="#2-1：以用户为中心的设计-（一）" class="headerlink" title="2.1：以用户为中心的设计 （一）"></a>2.1：以用户为中心的设计 （一）</h4><p>​    以用户为中心的设计过程的每个阶段都关注用户和他们的需求。这是一个迭代的过程，这意味着设计师会一次又一次的回到某些阶段，以完善他们的设计，并为他们的目标用户创造最好的产品。</p>
+<p>​    明确用户的需求。基于你的研究，弄清楚哪些用户问题是最需要解决的。为这些用户问题设计解决方案。想出很多可以解决你所确定的用户问题的设计想法。然后，开始实际设计这些想法，根据用户的需求来评估你所设计的解决方案，用真实的人测试你设计的产品并收集反馈。</p>
+<h4 id="2-2：用户体验设计五要素-（二）"><a href="#2-2：用户体验设计五要素-（二）" class="headerlink" title="2.2：用户体验设计五要素 （二）"></a>2.2：用户体验设计五要素 （二）</h4><p>​    用户体验设计的五要素是一个框架，用户体验设计师通过这个框架来把一个想法变成一个工作产品。这五个要素从下到上是：战略（strategy）、范围（scope）、结构（structure）、骨架（skeleton）和表面（surface）。</p>
+<p>​    <strong>策略</strong>：在这里你为你的设计目标打下基础。这些目标是基于用户需求和产品的商业目标。</p>
+<p>​    <strong>范围</strong>：在这里你要确定你要建造的产品的类型。在这一点上，你将考虑你想在产品中包含什么样的功能和内容。</p>
+<p>​    <strong>结构</strong>：在这里，你要弄清楚如何组织你的设计以及你希望用户如何与产品互动。</p>
+<p>​    <strong>骨架</strong>：是产品的布局，就像我们的骨骼布局塑造了我们的皮肤一样，骨架层详细说明了你的设计是如何工作的—就像一个骨架一样，用户不会直接看到它的内部工作原理。</p>
+<p>​    <strong>表面</strong>：代表了产品在用户面前的样子。表面代表了用户查看和互动的界面。</p>
+<h4 id="2-3：设计思维过程-（三）"><a href="#2-3：设计思维过程-（三）" class="headerlink" title="2.3：设计思维过程  （三）"></a>2.3：设计思维过程  （三）</h4><p>​    设计思维是一种以用户为中心的解决问题的方法。它帮助设计师创造出解决真正的用户问题的解决方案，并且是功能性的和可负担的。设计过程有五个阶段：共情、定义、构思、原型和测试。</p>
+<p>​    <strong>共情</strong>：目标是了解用户的需求以及用户的想法和感受。这涉及到大量的用户研究，例如进行调查、访谈和观察会议，因此你可以清楚地了解谁是你的用户以及他们所面临的挑战。</p>
+<p>​    <strong>定义</strong>：你将根据你的研究结果，创建一个清晰的问题陈述，或描述你的设计要解决的用户的需求。这将推动你的团队为产品的设计制定一个明确的目标。</p>
+<p>​    <strong>构思</strong>：一旦你找到了一个用户问题，并确定了为什么它是一个重要的问题，那么就到了构思阶段。构思的目标是提出尽可能多的设计方案。</p>
+<p>​    <strong>原型</strong>：一旦你对如何解决问题有了一个想法，你就可以进入原型阶段了。原型是一个产品的早期模型，它展示了产品的功能。</p>
+<p>​    <strong>测试</strong>：用户会对你的设计提供反馈，然后再由工程师建造产品并向公众推出。可以不断的通过反馈去打磨产品。根据测试阶段的反馈，你可能需要回到设计过程的起点，为解决方案提出新的想法，或者开发新的原型。最终，设计思维过程的目标，就像任何设计框架一样，是实现你的设计。</p>
+<h4 id="2-4：Lean-UX-（四）"><a href="#2-4：Lean-UX-（四）" class="headerlink" title="2.4：Lean UX （四）"></a>2.4：Lean UX （四）</h4><p>​    Lean UX的重点是减少时间和资源的浪费，并尽快产生一个可行的产品。这个过程是迭代的，意味着团队在收集用户研究和利益相关者的反馈时，继续对产品进行更新和修改。分为三个步骤：</p>
+<p>​    <strong>思考</strong>：探索用户正在经历的问题，考虑如何用你的设计来解决这些问题。这一步是关于收集研究，所以你可以形成一个清晰的概念，即产品是为谁设计的，以及它将如何帮助他们。</p>
+<p>​    <strong>制作</strong>：通过创建草图、线框和原型，开始设计产品。你还将创建一个最小可行产品，简称MVP，这是你的设计的一个简单原型，你可以在目标受众那里测试。准备好在收集反馈意见时回头更新你的原型!</p>
+<p>​    <strong>检查</strong>：找出用户对你的设计的反应，并从项目利益相关者那里收集反馈。对你的设计做出相应的调整，如果有必要，再重复这三个步骤。</p>
+<p>​    这些步骤是要根据需要多次重复的，直到团队达到预期的最终产品。Lean UX过程鼓励生产力和协作。使用Lean UX的话，牢记六个原则：</p>
+<p>​    进步：只关注那些能够推动设计过程向特定目标发展的设计元素和功能。不要被 “好的东西 “分散注意力。</p>
+<p>​    保持好奇心：精益用户体验是关于使用来自用户和利益相关者的反馈来修改和改进你的设计。不断地寻求反馈，以了解为什么特定的设计选择可以或不可以。</p>
+<p>​    在现实世界中测试想法：精益用户体验鼓励设计师在会议室外和潜在用户一起测试他们的想法—例如使用原型。</p>
+<p>​    将你的想法实体化：与其在内部争论和分析一个想法是否可行，不如把你的想法变成实物，可以查看，可以测试，当它们还在你的脑海里时。这样，你就可以在早期阶段得到关于你的设计的反馈，这时不同的观点和反馈是最有帮助的。</p>
+<p>​    把可交付的成果重构为结果：专注于创造用户真正想要和需要的可用的、令人愉快的产品。始终牢记，你首先是为你的用户设计的，而不是为项目的利益相关者设计的。</p>
+<p>​    拥抱彻底的透明：对团队中的每个人坦诚相待（并期望得到同样的回报），因为你们将依赖于彼此的见解。这样一来，每个人都可以就如何前进做出明智的决定，避免浪费时间和精力。</p>
+<h4 id="2-5：Double-Diamond-（五）"><a href="#2-5：Double-Diamond-（五）" class="headerlink" title="2.5：Double Diamond （五）"></a>2.5：Double Diamond （五）</h4><p>​    Double Diamond是一个更传统的用户体验过程，它将用户体验设计分成两个主要阶段（或 “钻石”）：研究和设计。每个阶段都有两个步骤。如果结合起来，就是四个步骤：</p>
+<p>​    <strong>发现问题</strong>：收集关于用户所面临的潜在问题的信息。</p>
+<p>​    <strong>界定问题</strong>：筛选数据，并集中于你的产品要解决的主要问题。</p>
+<p>​    <strong>为问题制定解决方案</strong>：开始设计你的产品，作为一项正在进行的工作。这就是线框图和原型发挥作用的地方。</p>
+<p>​    <strong>交付产品</strong>：审查和测试你的产品，为发布做准备。</p>
+<p>​    设计团队并不只专注于设计。为了获得成功，整个团队必须知道如何将设计原则、设计方法、用户参与策略和领导原则结合起来。准备好根据需要承担多种角色和责任。</p>
+<p>有四条原则贯穿于双钻石的过程：</p>
+<p>​    <strong>专注于用户</strong>：正如用户体验设计中的一贯做法，用户是最重要的。</p>
+<p>​    <strong>沟通</strong>：通过图像和设计选择来补充文字，进行视觉上的沟通。你还应该确保你的设计的沟通是公平的和无障碍的，你会在这部分课程中了解到更多。</p>
+<p>​    <strong>协作</strong>：双钻程序的一个独特的特点是，它鼓励与你的团队成员进行创造性的合作和共同创造。</p>
+<p>​    <strong>迭代</strong>：接受设计是一项进行中的工作，不会马上完成。神奇之处在于修改。每一次迭代，你都会给用户一个新的体验。</p>
+<p>Lean UX和Double Diamond框架对于入门级的用户体验设计师来说，都是非常有用的理解。即使你的团队不遵循这些流程之一，了解每一个流程的运作方式和使用原因也是非常宝贵的。</p>
+<h2 id="3-为用户而设计"><a href="#3-为用户而设计" class="headerlink" title="3.为用户而设计"></a>3.为用户而设计</h2><p>考虑潜在的互联网用户会遇到的问题</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>成本</th>
+<th>连接</th>
+<th>语言</th>
+<th>存储</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>设备成本</td>
+<td>网络连接</td>
+<td>翻译功能</td>
+<td>设备存储容量（参考微信😅）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>​    这个目标是让每个用户感觉到我们是为他们设计的体验，无论他们是谁，住在哪里，收入多少，受教育程度有多高。全面了解用户的背景是一个重要的开始。而关于用户体验设计的奇怪之处在于，如果它是好的设计，你不会真正注意到它。只有当它是坏的时候，你才会注意到它。</p>
+<h2 id="4-跨平台设计"><a href="#4-跨平台设计" class="headerlink" title="4.跨平台设计"></a>4.跨平台设计</h2><p>​    用户体验设计师现在必须为几乎无限多的不同设备和屏幕尺寸进行规划。尽管UX设计师需要跨平台思考，但当你构建一个新产品时，首先关注一个平台是很重要的。你选择的平台应该是最能满足你的终端用户需求的平台。后来，你可以为其他平台进行设计。除了在不同的平台上有一致的用户体验外，有一个一致的品牌形象也很重要。</p>
+<p>为不同平台设计时的关键考虑因素：</p>
+<p>​    屏幕尺寸 ：为不同平台设计时的第一个考虑是调整设计元素和功能以适应不同的屏幕尺寸。例如，当你为台式电脑和笔记本电脑设计时，你有很多的屏幕空间。但是当你为较小的屏幕，如手机设计时，你必须仔细决定在有限的空间里优先考虑设计的哪些部分。这意味着要让每一个字、每一个图标和每一张图片都有价值!</p>
+<p>​    互动性：除了屏幕的大小，你还需要考虑用户与每个平台的交互方式，以及这些交互方式会如何影响你的设计决策。</p>
+<p>​    无障碍性：也是至关重要的。不同的人群会以不同的方式与你的产品互动，比如使用读屏器、闭合字幕或开关设备。为了开始，自己尝试使用其中的一些技术是很有帮助的，以了解残障人士在不同平台上与你的产品互动的情况。</p>
+<p>​    内容布局：在用户体验设计的世界里，布局指的是信息在屏幕上的组织方式。例如，在为台式电脑或笔记本电脑设计时，你有一个熟悉的、标准化的尺寸的优势：横向（水平）模式。屏幕很宽，内容可以分栏摆放，设计起来也更灵活。</p>
+<p>​    功能性：用户选择一个平台而不是另一个平台有很多原因，但功能和他们想要完成的任务种类是一个巨大的驱动力。你为每个平台所做的设计可能会根据你期望用户如何以及何时需要该产品而有所不同。</p>
+<p>​    作为一个UX设计师，确保设计考虑到并充分利用每个平台的独特功能。在准备跨平台设计时，牢记四个C是很有帮助的：一致性、连续性、背景和互补性。  </p>
+<p>​    <strong>一致性</strong>：在设计一个产品时，必须忠实于公司的品牌准则，以便在不同的平台上保持一致性，并推动品牌意识。</p>
+<p>​    <strong>连续性</strong>：为了给用户提供一个在平台间移动的无缝体验，UX设计师还必须优先考虑连续性。设计的连续性意味着用户在从一个平台移动到下一个平台时可以保持他们的进度。</p>
+<p>​    <strong>背景</strong>：考虑你为之设计的每个平台的背景也很重要。这意味着要考虑用户何时以及如何在不同的平台上喜欢与某些功能进行交互。考虑到用户可能会在下班后坐在车里用智能手表查看他们的电子邮件，然后在设计时考虑到这种情况，这就是上下文的一个例子。</p>
+<p>​    <strong>互补性</strong>：创造一个伟大的跨平台用户体验的方法之一是确保每个平台的设计都能为用户增加一些新的东西。考虑到每个平台如何能够独特地丰富整体的用户体验，是创造互补的UX设计的最好方法。</p>
+<p>这里可以对某个产品进行4C的分析，下面以我对spotify的UX理解进行分析：</p>
+<p>​    在看到4C标准的时候，我第一个想到的跨平台应用，且具备这些特征且用户体验良好的产品是Spotify。首先在一致性上来说，Spotify的多平台设计从图标，配色，交互这些上来看，都很一致。然后在连续性上，Spotify有一个跨平台远程听歌的功能，虽然我用的不多，但确实是个很有用的功能。然后就是背景，交互操作在不同的平台有些许的不同，这一点算是对平台的让步。我使用体验注意最大的地方就是听歌模式上的一个区别，电脑端上是属于听歌模式都可以自己选择，但是手机端的听歌模式，对于免费用户来说，只能选择随机播放。在互补性上，Spotify也在不断的更新新功能。</p>
+<h2 id="5-无障碍设计"><a href="#5-无障碍设计" class="headerlink" title="5.无障碍设计"></a>5.无障碍设计</h2><p>​    当设计师开始考虑如何在他们的设计中包含更多的人时，他们称之为通用设计。通用设计是为具有最广泛的能力和最广泛的情况的用户创造一种产品的过程。把它想成是一种 “一刀切 “的方法。设计师为每个人提出一个解决方案。问题是，当你专注于为每个人创造一个解决方案时，设计就会失去其有效性。当你有这么多的目标用户时，你的产品往往很难实现任何目标。</p>
+<p>​    包容性设计意味着在做出设计选择时要考虑到个人的识别因素，如能力、种族、经济地位、语言、年龄和性别。包容性设计包括来自传统上被排斥的人群的研究人员和设计师，因此他们可以在设计过程的各个阶段提供他们独特的观点。如果说通用设计是一种一刀切的解决方案，那么包容性设计可以说是为一个人解决问题，扩展到许多人。通过包容性设计，你为一种类型的用户解决问题，而这个解决方案的好处可以延伸到许多其他类型的用户。作为设计师，我们的目标是为具有最广泛能力的用户建立起无障碍的体验。换句话说，没有人应该被排除在我们建造的产品之外，因为我们在建造产品时没有考虑他们的需求。在包容性设计中，没有所谓的正常现象。没有任何普通人或目标受众是我们应该设计的。</p>
+<p>​    每个设计师都应该知道无障碍性的基本知识，以及为什么为那些代表不足和被排斥的人创造产品是必须的。</p>
+<p>​    我们倾向于将无障碍性分为四大类。运动障碍者；失聪或听力障碍者；认知障碍者，如发展、学习或智力障碍者；以及视觉障碍者。无障碍性是指让所有的人都能使用的东西，无论他们是否有明显的残疾。为无障碍设计并不是一个障碍，而是让我们的产品尽可能多地被用户使用的一种方式。</p>
+<p>​    <strong>辅助技术</strong>，包括颜色修改、语音控制、屏幕阅读器和替代文本。</p>
+<p>​    颜色修改，就像设备上的高对比度模式或黑暗模式，增加了屏幕上的颜色对比度。白色背景上的黑色文字，或深色背景上的白色文字，都是高对比度的例子。高对比度使低视力的人更容易看到界面。</p>
+<p>​    语音控制允许用户只用他们的声音来导航和与他们设备上的按钮和屏幕互动。很多设备都有这个功能的设置。开关是一种辅助技术设备，取代了使用电脑键盘或鼠标的需要。开关设备可以让用户控制电脑或智能手机等技术。</p>
+<p>​    屏幕阅读器是视力有限的人最常见的辅助技术之一，件在移动和网络设备上工作，并大声读出屏幕上的任何文字。屏幕阅读器还可以读取任何互动元素，如按钮，以及不可见的文本，如按钮名称，以及图像的任何替代文本。替代文本，或称alt文本，有助于将视觉用户界面翻译成基于文本的用户界面。它基本上是用文字来描述任何有意义的图像，供那些不能看到图像的人使用。Alt文本对于那些低带宽连接的人也是超级有帮助的。如果你的设备无法保持与互联网的连接，它可能会努力加载一个大文件或图像。</p>
+<p>​    语音转文字就是一个很好的功能，通过语音转文字，用户通过对他们的手机或电脑说话来撰写文字。语音记录会自动转换为文本。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/UX/">UX</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Google/">Google</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/df4e3609">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Foundations of User Experience (UX) Design (三)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/60f196c4">
+                        <span class="hidden-mobile">Foundations of User Experience (UX) Design (一)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","appKey":"2A905bAsfam8HrXLbOBAAX0y","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> theme <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> used by <a target="_blank" href="https://github.com/shermerL" rel="nofollow noopener noopener"><span>shermer</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7498bafdc13616b6c0c81baef8fb6645";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

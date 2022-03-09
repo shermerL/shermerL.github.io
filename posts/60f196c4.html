@@ -1,0 +1,623 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/touxiang_002.png">
+  <link rel="icon" href="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/touxiang_002.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="shermer">
+  <meta name="keywords" content="">
+  <meta name="description" content="1.职业发展：​    用户体验设计是一个快速变化的领域，预计10年的增长率为15%（Burning Glass, 2020）。 “用户体验设计师 “也只是更广泛的用户体验领域中的众多工作头衔之一 交互设计师专注于设计产品的体验以及它的功能。他们努力理解用户流程，或者说典型用户在应用程序、网站或其他平台上完成任务的路径。在谷歌和许多其他公司，交互设计师是用户体验设计师的一种专门类型。交互设计师的工">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Foundations of User Experience (UX) Design (一)">
+<meta property="og:url" content="https://yykaoyanupup.xyz/posts/60f196c4">
+<meta property="og:site_name" content="不止前端">
+<meta property="og:description" content="1.职业发展：​    用户体验设计是一个快速变化的领域，预计10年的增长率为15%（Burning Glass, 2020）。 “用户体验设计师 “也只是更广泛的用户体验领域中的众多工作头衔之一 交互设计师专注于设计产品的体验以及它的功能。他们努力理解用户流程，或者说典型用户在应用程序、网站或其他平台上完成任务的路径。在谷歌和许多其他公司，交互设计师是用户体验设计师的一种专门类型。交互设计师的工">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/60f196c4_001.png">
+<meta property="article:published_time" content="2022-01-28T12:34:21.000Z">
+<meta property="article:modified_time" content="2022-03-09T07:03:10.621Z">
+<meta property="article:author" content="shermer">
+<meta property="article:tag" content="Google">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/60f196c4_001.png">
+  
+  <title>Foundations of User Experience (UX) Design (一) - 不止前端</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yykaoyanupup.xyz","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"7498bafdc13616b6c0c81baef8fb6645","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","app_key":"2A905bAsfam8HrXLbOBAAX0y","server_url":"https://hco1yxjb.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>不止前端</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/bgimg_002.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Foundations of User Experience (UX) Design (一)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-28 12:34" pubdate>
+        2022年1月28日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Foundations of User Experience (UX) Design (一)</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年3月9日 早上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="1-职业发展："><a href="#1-职业发展：" class="headerlink" title="1.职业发展："></a>1.职业发展：</h2><p>​    用户体验设计是一个快速变化的领域，预计10年的增长率为15%（Burning Glass, 2020）。 “用户体验设计师 “也只是更广泛的用户体验领域中的众多工作头衔之一</p>
+<h3 id="交互设计师"><a href="#交互设计师" class="headerlink" title="交互设计师"></a>交互设计师</h3><p>专注于设计产品的体验以及它的功能。他们努力理解用户流程，或者说典型用户在应用程序、网站或其他平台上完成任务的路径。在谷歌和许多其他公司，交互设计师是用户体验设计师的一种专门类型。<strong>交互设计师</strong>的工作是回答这样的问题。如果用户点击这个按钮应该发生什么？我们如何使这个动作更容易被用户完成？还有，网站内的设计元素是如何布局的？交互设计师不太关注产品的外观，而是努力使产品易于浏览，并使用户能够简单地与之互动。</p>
+<h3 id="视觉设计师"><a href="#视觉设计师" class="headerlink" title="视觉设计师"></a>视觉设计师</h3><p>专注于产品或技术的外观。他们通常负责设计标志、插图和图标，以及决定字体颜色、大小和位置。视觉设计师专注于每个页面或屏幕的布局，并使所有的设计元素以一种视觉上吸引人的方式结合在一起。在谷歌和其他许多公司，视觉设计师是用户体验设计师的一种专门类型。<strong>视觉设计师</strong>的角色是要回答这样的问题。图标应该有什么样的视觉风格，才能符合产品的品牌形象？或者，我们应该为这个按钮使用哪种颜色和字体？视觉设计师的目标是用能够激发、吸引和刺激用户的设计来取悦他们。</p>
+<h3 id="动作设计师"><a href="#动作设计师" class="headerlink" title="动作设计师"></a>动作设计师</h3><p>考虑的是用户在产品中移动的感觉，以及如何在应用程序或网站的页面之间创建平滑的过渡。他们还可以创建动画或视觉效果，将他们的设计理念付诸实践。在谷歌和其他许多公司，动作设计师是用户体验设计师的一种专门类型。<strong>动作设计师</strong>的工作是回答以下问题。一个应用程序应该如何在页面之间过渡？我们如何显示这些动作之间的联系？还有，什么是吸引人的动画，能帮助讲述我们的故事？动作设计师专注于移动的设计元素，而不是传统的静态设计。</p>
+<h3 id="虚拟现实（VR）和增强现实（AR）设计师"><a href="#虚拟现实（VR）和增强现实（AR）设计师" class="headerlink" title="虚拟现实（VR）和增强现实（AR）设计师"></a>虚拟现实（VR）和增强现实（AR）设计师</h3><p>创造的产品为用户提供沉浸式体验，不受物理世界的限制。虚拟现实涉及到一个可穿戴的头盔，它占据了用户的视觉；它屏蔽了他们的物理环境，让他们沉浸在一个完全虚拟的世界中。例如，VR可以让你感觉进入了一个神奇的想象之地。另一方面，增强现实技术使用物理世界作为背景，并在其上添加虚拟元素。用户仍然能够意识到他们周围的环境，但他们的现实是通过屏幕添加元素来增强的。例如，你可以坐在你的实际厨房里，而AR体验可以在你周围的房间里添加数字图像，如一个新的酒吧椅或一件艺术品。</p>
+<h3 id="用户体验研究人员"><a href="#用户体验研究人员" class="headerlink" title="用户体验研究人员"></a>用户体验研究人员</h3><p>进行研究或采访，考察人们如何使用产品。用户体验研究人员经常确定用户遇到的痛点，并探索产品如何帮助解决这些问题。他们还探索现有产品的可用性，例如，通过要求用户在应用程序或网站中完成任务。<strong>用户体验研究人员</strong>回答这样的问题。用户正面临什么问题？这个产品的设计是否容易使用？还有，人们会对这个新的设计功能感兴趣吗？用户体验研究人员的目标通常是了解一个产品如何为用户遇到的实际问题提供解决方案。</p>
+<h3 id="用户体验项目经理"><a href="#用户体验项目经理" class="headerlink" title="用户体验项目经理"></a>用户体验项目经理</h3><p>确保清晰和及时的沟通，以便建立一个有用的产品的过程从开始到结束都能顺利进行。这可能包括设定目标，编写项目计划，以及分配团队资源。<strong>用户体验项目经理</strong>会回答以下问题。这个项目的总体目标是什么，实现这些目标的计划是什么？还有，我们如何在团队中创建和改进流程？用户体验项目经理跨部门工作，确保用户体验参与整个项目生命周期。</p>
+<h3 id="用户体验工程师"><a href="#用户体验工程师" class="headerlink" title="用户体验工程师"></a>用户体验工程师</h3><p>将设计的意图转化为可操作的体验，如一个应用程序或网站。他们帮助用户体验团队弄清设计是否直观和技术上可行。<strong>用户体验工程师</strong>回答这样的问题。我们如何实现每个交互？我们如何以一种忠实于其原始意图的方式来构建这个设计？还有，我们如何探索替代方案以确定最佳的用户体验？用户体验工程师综合了设计和开发，将产品概念变为现实。</p>
+<h3 id="对话设计师"><a href="#对话设计师" class="headerlink" title="对话设计师"></a>对话设计师</h3><p>使用户有可能通过自然的对话来完成事情。他们利用用户研究、心理学、技术知识和语言学来创造直观的、有吸引力的用户体验。对话设计师开发语音的 “角色 “或个性，以及互动的流程和对话。<strong>对话设计师</strong>回答以下问题。基于用户是谁，要完成的任务，以及对话的背景，理想的语言和流程是什么？虚拟助理的个性是否显得真实、有吸引力，并反映了品牌的价值？对话是如何与屏幕上的元素配合的？虚拟助理是否提供了一个一致的、可用的、有用的端到端体验？</p>
+<p>​    上述介绍了，UX设计师的专业化的职业发展，像现在一直热度不下的元宇宙，就会有虚拟现实（VR）和增强现实（AR）设计师的存在需求。</p>
+<h2 id="2-产品开发的生命周期："><a href="#2-产品开发的生命周期：" class="headerlink" title="2.产品开发的生命周期："></a>2.产品开发的生命周期：</h2><p>​    每一个新产品，无论是应用程序还是实物，都遵循一套特定的步骤，从最初的想法火花到最终产品的发布。这被称为产品开发的生命周期，它有五个阶段：头脑风暴、定义、设计、测试和发布。</p>
+<ul>
+<li>产品开发生命周期的第一个阶段是头脑风暴阶段，这时团队开始思考产品的想法。你的团队可能已经知道你要解决的用户问题，当你开始产品开发生命周期时。如果没有，想出一个用户问题的清单是一个很好的开始。一个大公司的用户体验设计师可能不会很好的参与到头脑风暴阶段。但是在初创公司或小企业的用户体验设计师可能会有很大的作用! </li>
+<li>产品开发生命周期的第二阶段将用户体验设计师、用户体验研究员、项目经理和产品负责人聚集在一起，定义产品。其目的是通过回答以下问题来弄清产品的规格。这个产品是为谁设计的？该产品将做什么？还有，产品要成功需要包括哪些功能？</li>
+<li>产品开发生命周期的第三个阶段是设计。这是你，作为一个UX设计师，真正可以大显身手的时候了 在这个阶段，用户体验设计师为产品提出想法。一般来说，用户体验设计师从绘制线框开始，这是产品的轮廓或草图，然后转向创建原型，这是产品的早期模型，传达其功能。</li>
+<li>进入测试阶段。用户体验设计师与工程师合作，开发与原始设计相匹配的功能原型，包括符合公司品牌的细节和特征，如字体和颜色的选择。这也意味着编写代码和最终确定产品的整体结构。至少要经过三个阶段的测试：公司内部的测试，与利益相关者的审查，以及与潜在用户的外部测试。利益相关者是指你需要与之合作以完成项目的人，或者对项目有一定兴趣的人，无论是在公司内部还是外部。</li>
+<li>发布阶段是庆祝开始推广产品的时候。团队中的营销专家可能会在社交媒体上发布新产品的信息，或发布新闻稿。客户支持团队可能会准备好帮助新用户学习产品的运作。</li>
+</ul>
+<p>​    发布阶段可能是产品开发周期的终点。但对于一个数字产品，如应用程序或网站，向更广泛的受众推出产品提供了另一个 机会来改善用户体验。新用户可能会发现产品功能上的问题，或者之前没有人注意到的需要改进的功能。因此，在发布阶段之后，团队往往会循环回到设计和测试阶段，开始着手开发数字产品的下一个版本。</p>
+<blockquote>
+<p><strong>关于测试</strong></p>
+<p>首先，团队在内部测试产品，寻找技术故障和可用性问题。这通常被称为alpha测试。</p>
+<p>然后，产品接受利益相关者的测试，以确保产品与公司的愿景相一致，符合法律规定的可访问性准则，并遵循政府的隐私规定，例如。</p>
+<p>最后，是对潜在用户的外部测试。这时要弄清楚产品是否提供了良好的用户体验，也就是说它是可用的、公平的、愉快的、有用的。这通常被称为beta测试。</p>
+</blockquote>
+<h2 id="3-用户体验四要素："><a href="#3-用户体验四要素：" class="headerlink" title="3.用户体验四要素："></a>3.用户体验四要素：</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>usable</strong></th>
+<th><strong>equitable</strong></th>
+<th><strong>enjoyable</strong></th>
+<th><strong>useful</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可用的</td>
+<td>公平的</td>
+<td>愉悦的</td>
+<td>有用的</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这里放上一个例子：给出FoodieLand应用在用户体验四要素设计上的想法，不要急着往下翻，先思考，下面会给出适当的解答。</p>
+<p><img src="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/60f196c4_001.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>如图1-1：FoodieLand手机应用</p>
+<p>参考解答：</p>
+<p>​    可以很明显的看到，FoodieLand的按钮是<strong>可用的</strong>，很容易找到功能的按钮加上简洁的结构设计，会带来一个很有效的体验；FoodieLand的翻译功能使该应用程序具有<strong>公平性</strong>，对于语言不通的人士，翻译能带来很大的便利；FoodieLand所使用的图片布局使用户体验变得更加<strong>愉快</strong>，菜品的图片一目了然，而且有助于用户去挑选菜品；FoodieLand的筛选功能非常的<strong>有用</strong>，面对数量众多的菜品，如何快速选择适合自己口味的，这时候就能借助筛选功能，简单便利。</p>
+<h2 id="4-用户体验设计师的职责："><a href="#4-用户体验设计师的职责：" class="headerlink" title="4.用户体验设计师的职责："></a>4.用户体验设计师的职责：</h2><p><strong>发展的深度与广度：专家、通才、T型设计师。</strong></p>
+<p>​    用户研究：用户研究是关于了解使用你产品的人。通过研究，你会了解到用户的背景、人口统计、动机、痛点、情感和目标。你的研究方法可能包括调查、观察和采访。我们将在接下来的课程中更详细地探讨用户研究。</p>
+<p>​    信息架构：信息架构，简称IA，涉及到决定你的产品是如何组织和结构的。可以把IA看作是一个骨架，概述了用户如何与你的产品互动。你的产品中的一切都应该以对用户有意义的方式来组织，并满足他们的期望。</p>
+<p>​    线框设计：线框是一个产品或屏幕的基本轮廓或草图，如一个应用程序或网站。顾名思义，线框看起来就像是用电线制作的。它们大多是线条和形状，还有一些文字。线框图可以用手画，也可以用软件以数字方式创建。线框图可以帮助你把你的设计想法变成现实，这样你团队中的其他人就可以提供意见和反馈。</p>
+<p>​    原型设计：原型是一个产品的早期模型，用于展示其功能。原型可以是实物或数字形式，其复杂程度也不尽相同。有时，制作一个原型是为了演示产品的一个特定功能，如屏幕之间的转换或产品的物理外观和感觉。在整个设计过程中，你会为任何特定的产品制作多个原型。</p>
+<p>​    视觉设计：视觉设计的重点是产品或技术的外观。作为一名用户体验设计师，你需要了解视觉设计的基础，以便向用户传达产品功能和外观之间的联系。在这个证书课程中，你会学到一些视觉设计的最重要的原则。</p>
+<p>​    有效的沟通：作为一名用户体验设计师，有效的沟通意味着通过电子邮件、会议、演讲和设计软件与你的同事联系。用户体验设计是一个非常协作的领域，所以能够与队友进行数字和面对面的沟通是很重要的。你需要成为一个好的倾听者，接受反馈，并以清晰的方式分享你的想法。</p>
+<h2 id="5-用户体验设计师的团体协作"><a href="#5-用户体验设计师的团体协作" class="headerlink" title="5.用户体验设计师的团体协作"></a>5.用户体验设计师的团体协作</h2><p>用户体验设计师的工作团队:</p>
+<p><strong>工程师</strong>：工程师将设计转化为可运行的体验，如一个应用程序或一个网站。他们帮助用户体验团队从技术角度弄清楚设计是否可行，并把这个想法变成现实。与工程师紧密合作，让他们尽早参与到设计过程中来，对于确保你的项目获得成功至关重要。</p>
+<p><strong>用户体验研究人员</strong>：用户体验研究是关于了解用户对你的产品的需求和期望。用户体验研究人员使用观察、访谈和调查等方法来了解用户的独特观点。研究的结果可以为你的每一步设计决策提供参考。如果你在一个初创公司或小企业工作，你很有可能会做自己的用户体验研究。不过在大公司，你可能会和指定的用户体验研究员一起工作，他们会提供研究结果，为你的设计工作提供参考。</p>
+<p><strong>项目经理</strong>：项目经理确保整个团队有清晰和及时的沟通，从而使建立一个有用的产品的过程从开始到结束都能顺利进行。程序经理监督、支持和跟踪整个项目。他们向团队成员分配任务，监控项目预算，并管理时间表，以及其他事项。当面临工作中的任何挫折或问题时，请将你团队的项目经理视为你的支持来源。</p>
+<p><strong>产品经理</strong>：产品负责人负责确保最终产品的成功，并与利益相关者进行沟通。你的产品负责人将确定项目的核心目标和交付物，这样你就可以专注于创造创新的设计方案。在一些公司，产品负责人被称为产品经理。</p>
+<p>其他用户体验设计师：在很多情况下，你不会是某个项目的唯一设计师，特别是当你在一个大公司工作时，以及当你是一个新设计师时。例如，作为一个入门级的UX设计师，你可能会与一个更有经验的视觉设计师合作，他可以确保你的设计符合公司的品牌标准，如颜色和字体。与其他设计师一起工作是一个学习和提问的好机会。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/UX/">UX</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Google/">Google</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/a1bd1622">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Foundations of User Experience (UX) Design (二)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/5d8d3f63">
+                        <span class="hidden-mobile">Google UX设计课程学习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","appKey":"2A905bAsfam8HrXLbOBAAX0y","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> theme <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> used by <a target="_blank" href="https://github.com/shermerL" rel="nofollow noopener noopener"><span>shermer</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7498bafdc13616b6c0c81baef8fb6645";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

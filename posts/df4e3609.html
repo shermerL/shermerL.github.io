@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/touxiang_002.png">
+  <link rel="icon" href="https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/touxiang_002.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="shermer">
+  <meta name="keywords" content="">
+  <meta name="description" content="1.理解设计冲刺（Design Sprint） ​    設計敏捷方法 （Design Sprint Method）是由 Google 提出，且於內部實踐並受到歡迎。它的概念基礎來自於其他已經在產業界應用的方法，例如敏捷開發（Agile）、設計思考（Design Thinking）與革新遊戲法（gamestorming）。這個方法試圖讓每個設計團隊都能輕易的導入，且能於 2~5 天內解決設計挑戰或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Foundations of User Experience (UX) Design (三)">
+<meta property="og:url" content="https://yykaoyanupup.xyz/posts/df4e3609">
+<meta property="og:site_name" content="不止前端">
+<meta property="og:description" content="1.理解设计冲刺（Design Sprint） ​    設計敏捷方法 （Design Sprint Method）是由 Google 提出，且於內部實踐並受到歡迎。它的概念基礎來自於其他已經在產業界應用的方法，例如敏捷開發（Agile）、設計思考（Design Thinking）與革新遊戲法（gamestorming）。這個方法試圖讓每個設計團隊都能輕易的導入，且能於 2~5 天內解決設計挑戰或">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-30T18:38:00.000Z">
+<meta property="article:modified_time" content="2022-03-09T07:03:10.621Z">
+<meta property="article:author" content="shermer">
+<meta property="article:tag" content="Google">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>Foundations of User Experience (UX) Design (三) - 不止前端</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yykaoyanupup.xyz","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"7498bafdc13616b6c0c81baef8fb6645","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","app_key":"2A905bAsfam8HrXLbOBAAX0y","server_url":"https://hco1yxjb.lc-cn-n1-shared.com","path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>不止前端</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://jiafaaa.oss-cn-hangzhou.aliyuncs.com/img/bgimg_002.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Foundations of User Experience (UX) Design (三)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-30 18:38" pubdate>
+        2022年1月30日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      4 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Foundations of User Experience (UX) Design (三)</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年3月9日 早上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="1-理解设计冲刺（Design-Sprint）"><a href="#1-理解设计冲刺（Design-Sprint）" class="headerlink" title="1.理解设计冲刺（Design Sprint）"></a>1.理解设计冲刺（Design Sprint）</h2><blockquote>
+<p>​    設計敏捷方法 （Design Sprint Method）是由 Google 提出，且於內部實踐並受到歡迎。它的概念基礎來自於其他已經在產業界應用的方法，例如敏捷開發（Agile）、設計思考（Design Thinking）與革新遊戲法（gamestorming）。這個方法試圖讓每個設計團隊都能輕易的導入，且能於 2~5 天內解決設計挑戰或測試設計原型。</p>
+<p>引用自：<a target="_blank" rel="noopener" href="https://designtongue.me/google-design-sprint-method/">https://designtongue.me/google-design-sprint-method/</a></p>
+</blockquote>
+<p>​        设计冲刺的目标是通过设计、原型制作和与用户测试想法来解决关键的设计挑战。设计冲刺通常包括五个阶段：理解、构思、决定、原型和测试。设计冲刺可以节省时间。通过冲刺，你的团队可以将决策过程从几个月缩短到一个星期。冲刺也为将产品推向市场创造了一个有效的途径。冲刺阶段优先考虑用户，把他们的需求放在前面和中心。阶段性工作允许你在做出任何昂贵的决定之前，快速进入未来以测试你的产品并获得客户的反应。</p>
+<h2 id="2-设计冲刺的准备"><a href="#2-设计冲刺的准备" class="headerlink" title="2.设计冲刺的准备"></a>2.设计冲刺的准备</h2><p>​    用户研究始终是任何冲刺计划过程中的第一步。</p>
+<p>​    为了准备设计冲刺，你需要进行用户研究，安排与专家的会议，找到合适的空间，收集用品，建立基本规则，与你的团队破冰，并计划出冲刺后的行动项目。</p>
+<h2 id="3-设计冲刺"><a href="#3-设计冲刺" class="headerlink" title="3.设计冲刺"></a>3.设计冲刺</h2><p>​    第一阶段是了解阶段，在这里你会对设计挑战有一个清晰的认识。会有很多专家的简短讲座，旨在激发你的灵感。记下你的任何想法。第二阶段是构思阶段。冲刺负责人将指导团队进行头脑风暴活动，以激发创造力，并产生许多可能的设计挑战的解决方案。你的主要重点是提出想法，并把它们放出来。来到第三阶段，决定阶段，决定具有最大成功机会的解决方案。第四阶段是关于创建你的产品的原型。作为一个入门级的UX设计师，你将积极参与创建一个坚实的原型，供用户试用。测试阶段是整个过程的最后阶段，在这个阶段你要对你的原型进行测试。你可能被要求通过观察和采访用户来收集用户反馈。</p>
+<h2 id="4-冲刺回顾"><a href="#4-冲刺回顾" class="headerlink" title="4.冲刺回顾"></a>4.冲刺回顾</h2><p>​    回顾性会议是对团队的设计冲刺的合作性评论。回顾性思考是非常有用的。这可以帮助你更好地作为一个团队工作，改善你与客户的沟通方式，甚至指出你作为一个人可以成长的领域。</p>
+<p>在设计冲刺期间，重点是：</p>
+<p>​    了解设计的挑战、构思解决方案、决定哪些解决方案要建立、制作一些解决方案的原型、测试这些原型</p>
+<p>​    通过讨论设计冲刺中成功的部分和团队做得好的地方，开始回顾工作。也许创建了一个新的流程，可以应用于未来的冲刺阶段。或者是增加了一个新的数字工具，提高了团队的生产力。如果一个人分享了一个观点，每个人都应立即同意这个观点，而不是分享他们自己对某个话题的感受，就会导致群体思维。团体迷思会使每个人都没有平等的发言权，而且这可能意味着某些需要改进的地方被忽略了。</p>
+<p>在回顾的这一部分，你可能会问的问题包括。</p>
+<p>​    什么地方出了问题，让你措手不及？哪些问题出现的频率最高？你认为我们作为一个团队什么时候经历了最大的挑战？</p>
+<p>然后，检查冲刺的结果或最终产品，并问一些问题。</p>
+<p>​    团队是否高估或低估了完成设计所需的工作？是否有外部因素破坏了你们的生产力？而最重要的是，最终的设计是否真正解决了用户的问题？</p>
+<p>找出团队最终可以获得更好的解决方案的方法。</p>
+<p>​    在冲刺过程中，你发现了什么你仍然想知道的问题？目前的过程是如何阻碍团队创造更好的解决方案的？</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/UX/">UX</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Google/">Google</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/250dd906">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Foundations of User Experience (UX) Design (四)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/a1bd1622">
+                        <span class="hidden-mobile">Foundations of User Experience (UX) Design (二)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"hcO1yXjb1Eeu3BQt6EGIdTs5-gzGzoHsz","appKey":"2A905bAsfam8HrXLbOBAAX0y","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":true,"serverURLs":"","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> theme <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> used by <a target="_blank" href="https://github.com/shermerL" rel="nofollow noopener noopener"><span>shermer</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?7498bafdc13616b6c0c81baef8fb6645";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
